@@ -28,33 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ComboUser = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
-            // ComboUser
-            // 
-            this.ComboUser.FormattingEnabled = true;
-            this.ComboUser.Location = new System.Drawing.Point(282, 277);
-            this.ComboUser.Name = "ComboUser";
-            this.ComboUser.Size = new System.Drawing.Size(121, 21);
-            this.ComboUser.TabIndex = 0;
-            this.ComboUser.SelectedIndexChanged += new System.EventHandler(this.ComboUser_SelectedIndexChanged);
-            // 
-            // Form1
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.ComboUser);
-            this.Name = "Form1";
+            this.Name = "LoginForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox ComboUser;
     }
 }
 
