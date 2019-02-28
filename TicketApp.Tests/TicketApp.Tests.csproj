@@ -54,9 +54,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TicketApp\TicketApp.csproj">
-      <Project>{3298d71a-a6d5-4d69-88c9-7b072e312e81}</Project>
-      <Name>TicketApp</Name>
+    <ProjectReference Include="..\Library.Model\Library.Model.csproj">
+      <Project>{a487d7a1-752b-4aff-aa10-c0a4e47bfe19}</Project>
+      <Name>Library.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

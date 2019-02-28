@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TicketApp
+namespace Library.Model
 {
-    class Ticket
+    public class Ticket
     {
-        private int id { get; set; }
+        private int id { get; }
     }
 }
