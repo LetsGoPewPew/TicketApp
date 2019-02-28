@@ -1,6 +1,6 @@
 ﻿namespace TicketApp
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ComboUser = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // ComboUser
+            // 
+            this.ComboUser.FormattingEnabled = true;
+            this.ComboUser.Location = new System.Drawing.Point(282, 277);
+            this.ComboUser.Name = "ComboUser";
+            this.ComboUser.Size = new System.Drawing.Size(121, 21);
+            this.ComboUser.TabIndex = 0;
+            this.ComboUser.SelectedIndexChanged += new System.EventHandler(this.ComboUser_SelectedIndexChanged);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ComboUser);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox ComboUser;
     }
 }
 
