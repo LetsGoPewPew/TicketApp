@@ -8,6 +8,10 @@ namespace Library.Model
 {
     public class Ticket
     {
-        private int id { get; }
+        public int id { get; }
+        public Ticket(int id)
+        {
+            this.id = id;
+        }
     }
 }

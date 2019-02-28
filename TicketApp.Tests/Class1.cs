@@ -15,7 +15,8 @@ namespace TicketApp.Tests
         [Test]
         public void Aseert_that_id_is_one()
         {
-            Ticket t = new Ticket();
+            Ticket t = new Ticket(1);
+            Assert.AreEqual(t.id, 1);
         }
     }
 }
