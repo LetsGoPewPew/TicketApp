@@ -8,10 +8,23 @@ namespace Library.Model
 {
     public class Ticket
     {
-        public int id { get; }
-        public Ticket(int id)
+        public int Id { get; }
+        public int EventId { get; }
+
+        public Ticket(int id, int eventId)
         {
-            this.id = id;
+            this.Id = id;
+            this.EventId = eventId;
+        }
+
+        public bool Verify(int eventId)
+        {
+            if (this.EventId == eventId)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
