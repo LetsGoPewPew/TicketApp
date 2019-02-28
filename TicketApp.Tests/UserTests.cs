@@ -1,29 +1,35 @@
 ﻿using Library.Model;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TicketApp.Tests
 {
     [TestFixture]
     public class UserTests
     {
+        private Customer customer;
+
+        [SetUp]
+        public void SetupBeforeEachTest()
+        {
+            customer = new Customer("ole", "ole@ole.com", "passord");
+        }
+
         [Test]
         public void Assert_customer_created()
         {
-            Customer customer = new Customer("ole", "ole@ole.com", "passord");
-            Assert.IsNotEmpty(Customer.UserList);
-
+            Assert.IsNotEmpty(Customer.CustomerList);
         }
 
         [Test]
         public void Assert_customer_login()
         {
-            Customer customer = new Customer("ole", "ole@ole.com", "passord");
             Assert.True(Customer.Login("ole@ole.com", "passord"));
+        }
+
+        [Test]
+        public void Assert_customer_cannot_have_same_email()
+        {
+            Assert.True(Customer.EmailInUse("ole@ole.com"));
         }
     }
 }
