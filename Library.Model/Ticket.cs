@@ -11,6 +11,8 @@ namespace Library.Model
         public int Id { get; }
         public int EventId { get; }
 
+        public bool IsValid { get; set; } = true;
+
         public Ticket(int id, int eventId)
         {
             this.Id = id;
@@ -21,6 +23,7 @@ namespace Library.Model
         {
             if (this.EventId == eventId)
             {
+                this.IsValid = false;
                 return true;
             }
 
