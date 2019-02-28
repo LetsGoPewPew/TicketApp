@@ -21,15 +21,16 @@ namespace TicketApp.Tests
         }
 
         [Test]
-        public void Assert_customer_login()
+        public void Assert_user_cannot_have_same_email()
         {
-            Assert.True(Customer.Login("ole@ole.com", "passord"));
+            Assert.True(UserLogic.EmailInUse("ole@ole.com"));
         }
 
         [Test]
-        public void Assert_customer_cannot_have_same_email()
+        public void Assert_user_not_same_id()
         {
-            Assert.True(Customer.EmailInUse("ole@ole.com"));
+            Customer customer2 = new Customer("hans", "hans@hans.com", "passord2");
+            Assert.AreNotEqual(customer.Id, customer2.Id);
         }
     }
 }

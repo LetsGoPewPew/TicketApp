@@ -17,5 +17,14 @@ namespace TicketApp
         {
             InitializeComponent();
         }
+
+        private void ButtonLogin_Click(object sender, EventArgs e)
+        {
+            if(String.IsNullOrEmpty(TextEmail.Text) ||
+                String.IsNullOrEmpty(TextPassword.Text))
+            {
+                MessageBox.Show("User input pls");
+            }
+        }
     }
 }
