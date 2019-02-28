@@ -20,7 +20,6 @@ namespace Library.Model
         private string password;
         public string Password { get => password; set => password = value; }
         
-
         public Customer(string name, string email, string password)
         {
             Name = name;

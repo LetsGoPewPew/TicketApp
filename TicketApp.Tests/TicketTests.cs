@@ -13,33 +13,37 @@ namespace TicketApp.Tests
     [TestFixture]
     public class TicketTests
     {
-        private Ticket ticket;
-        private SocialEvent socialEvent;
+        private Ticket ticket1;
+        private Ticket ticket2;
+        private SocialEvent socialEvent1;
+        private SocialEvent socialEvent2;
 
         [SetUp]
         public void SetupBeforeEachTest()
         {
-            ticket = new Ticket(1, 1);
-            socialEvent = new SocialEvent(1);
+            socialEvent1 = new SocialEvent();
+            socialEvent2 = new SocialEvent();
+            ticket1 = new Ticket(socialEvent1.Id);
+            ticket2 = new Ticket(socialEvent2.Id);
         }
 
         [Test]
-        public void Assert_that_id_is_one()
+        public void Assert_ticket_not_same_id()
         {
-            Assert.AreEqual(ticket.Id, 1);
+            Assert.AreNotEqual(ticket1.Id, ticket2.Id);
         }
 
         [Test]
         public void Assert_that_ticket_has_correct_event_when_verifying()
         {
-            Assert.True(ticket.Verify(socialEvent.Id));
+            Assert.True(ticket1.Verify(socialEvent1.Id));
         }
 
         [Test]
-        public void Assert_that_ticket_is_not_valid_after_verification()
+        public void Assert_that_ticket_is_not_valid_after_verification_is_successfull()
         {
-            ticket.Verify(socialEvent.Id);
-            Assert.False(ticket.IsValid);
+            ticket1.Verify(socialEvent1.Id);
+            Assert.False(ticket1.IsValid);
         }
     }
 }

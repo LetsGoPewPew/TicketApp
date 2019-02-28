@@ -8,10 +8,17 @@ namespace Library.Model
 {
     public class SocialEvent
     {
-        public int Id { get; }
-        public SocialEvent(int Id)
+        private static int numberOfSocialEventsCreated = 0;
+
+        private static List<SocialEvent> socialEventList = new List<SocialEvent>();
+        public static List<SocialEvent> SocialEventList { get => socialEventList; set => socialEventList = value; }
+
+        private int id;
+        public int Id { get => id; set => id = value; }
+        public SocialEvent()
         {
-            this.Id = Id;
+            this.Id = numberOfSocialEventsCreated++;
+            socialEventList.Add(this);
         }
     }
 }
