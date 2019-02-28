@@ -28,7 +28,7 @@ namespace TicketApp.Tests
         }
 
         [Test]
-        public void Assert_ticket_not_same_id()
+        public void Assert_that_multiple_tickets_have_different_id()
         {
             Assert.AreNotEqual(ticket1.Id, ticket2.Id);
         }
