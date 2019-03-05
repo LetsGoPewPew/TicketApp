@@ -21,10 +21,10 @@ namespace TicketApp.Tests
         [SetUp]
         public void SetupBeforeEachTest()
         {
-            socialEvent1 = new SocialEvent();
-            socialEvent2 = new SocialEvent();
-            ticket1 = new Ticket(socialEvent1.Id);
-            ticket2 = new Ticket(socialEvent2.Id);
+            socialEvent1 = new SocialEvent(10);
+            socialEvent2 = new SocialEvent(10);
+            ticket1 = new Ticket(socialEvent1);
+            ticket2 = new Ticket(socialEvent2);
         }
 
         [Test]
@@ -44,6 +44,12 @@ namespace TicketApp.Tests
         {
             ticket1.Verify(socialEvent1.Id);
             Assert.False(ticket1.IsValid);
+        }
+
+        [Test]
+        public void Assert_that_ticket_is_added_to_the_social_events_list_of_tickets()
+        {
+            Assert.Contains(ticket1 , socialEvent1.TicketsForThisSocialEvent);
         }
     }
 }

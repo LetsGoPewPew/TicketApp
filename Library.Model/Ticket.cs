@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,26 +11,30 @@ namespace Library.Model
     {
         private static int numberOfTicketsCreated = 0;
 
+        private SocialEvent socialEvent;
+        public SocialEvent SocialEvent { get => socialEvent; set => socialEvent = value; }
+
         private int id;
-        public int Id { get => id; set => id = value; }
+        public int Id { get => id; private set => id = value; }
 
         private int eventId;
         public int EventId { get => eventId; set => eventId = value; }
 
         private bool isValid = true;
-        public bool IsValid { get => isValid; }
+        public bool IsValid { get => isValid; set => isValid = value; }
 
-        public Ticket(int eventId)
+        public Ticket(SocialEvent socialEvent)
         {
-            this.eventId = eventId;
-            this.id = numberOfTicketsCreated++;
+            this.socialEvent = socialEvent;
+            id = numberOfTicketsCreated++;
+            socialEvent.TicketsForThisSocialEvent.Add(this);
         }
 
         public bool Verify(int eventId)
         {
-            if (this.EventId == eventId)
+            if (socialEvent.Id == eventId)
             {
-                this.isValid = false;
+                IsValid = false;
                 return true;
             }
 
