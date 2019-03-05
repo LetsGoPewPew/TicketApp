@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listBoxSocialEvents = new System.Windows.Forms.ListBox();
+            this.buttonBuyTicket = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxSocialEvents
@@ -39,11 +40,22 @@
             this.listBoxSocialEvents.Size = new System.Drawing.Size(650, 407);
             this.listBoxSocialEvents.TabIndex = 0;
             // 
+            // buttonBuyTicket
+            // 
+            this.buttonBuyTicket.Location = new System.Drawing.Point(668, 53);
+            this.buttonBuyTicket.Name = "buttonBuyTicket";
+            this.buttonBuyTicket.Size = new System.Drawing.Size(120, 23);
+            this.buttonBuyTicket.TabIndex = 1;
+            this.buttonBuyTicket.Text = "Buy ticket";
+            this.buttonBuyTicket.UseVisualStyleBackColor = true;
+            this.buttonBuyTicket.Click += new System.EventHandler(this.ButtonBuyTicket_Click);
+            // 
             // SocialEventListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonBuyTicket);
             this.Controls.Add(this.listBoxSocialEvents);
             this.Name = "SocialEventListForm";
             this.Text = "SocialEventListForm";
@@ -54,5 +66,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBoxSocialEvents;
+        private System.Windows.Forms.Button buttonBuyTicket;
     }
 }

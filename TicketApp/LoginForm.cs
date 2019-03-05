@@ -27,6 +27,12 @@ namespace TicketApp
             SocialEvent socialEvent1 = new SocialEvent(5, "Art", "Kristine og Ramona synger bæ bæ lille lam");
             SocialEvent socialEvent2 = new SocialEvent(7, "Sports", "Stian og Jørgen Sjonglerer med datamus");
             SocialEvent socialEvent3 = new SocialEvent(9, "TalentShow", "Juan kjører solo dukkeshow");
+            SocialEvent socialEvent4 = new SocialEvent(5, "Sports", "Test event 1 (sports)");
+            SocialEvent socialEvent5 = new SocialEvent(7, "Sports", "Test event 2 (sports)");
+            SocialEvent socialEvent6 = new SocialEvent(9, "Concert", "Test event 3 (concert)");
+            SocialEvent socialEvent7 = new SocialEvent(5, "Concert", "Test event 4 (concert)");
+            SocialEvent socialEvent8 = new SocialEvent(7, "Art", "Test event 5 (art)");
+            SocialEvent socialEvent9 = new SocialEvent(9, "TalentShow", "Test event 6 (talentShow)");
 
             Ticket ticket1 = new Ticket(socialEvent1);
             Ticket ticket2 = new Ticket(socialEvent1);
@@ -48,6 +54,7 @@ namespace TicketApp
                     //MessageBox.Show("Access allowed !");
                     SocialEventListForm socialEventListForm = new SocialEventListForm();
                     socialEventListForm.Show();
+                    this.Hide();
                 }
                 else
                 {

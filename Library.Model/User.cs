@@ -11,6 +11,9 @@ namespace Library.Model
         private static List<User> userList = new List<User>();
         public static List<User> UserList { get => userList; set => userList = value; }
 
+        private List<Ticket> ownedTickets;
+        public  List<Ticket> OwnedTickets { get => ownedTickets; set => ownedTickets = value; }
+
         private static int NumbersOfUsersCreated = 0;
 
         private int id;

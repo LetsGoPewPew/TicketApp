@@ -19,5 +19,11 @@ namespace TicketApp
 
             listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
         }
+        private void ButtonBuyTicket_Click(object sender, EventArgs e)
+        {
+            SocialEvent selectedSocialEvent = (SocialEvent) listBoxSocialEvents.SelectedItem;
+            BuyTicketForm buyTicket = new BuyTicketForm(selectedSocialEvent);
+            buyTicket.Show();
+        }
     }
 }
