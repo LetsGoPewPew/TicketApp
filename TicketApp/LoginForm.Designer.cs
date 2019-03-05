@@ -55,6 +55,7 @@
             this.ButtonRegister.TabIndex = 1;
             this.ButtonRegister.Text = "Register";
             this.ButtonRegister.UseVisualStyleBackColor = true;
+            this.ButtonRegister.Click += new System.EventHandler(this.ButtonRegister_Click);
             // 
             // ButtonNoLoggin
             // 
