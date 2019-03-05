@@ -21,8 +21,7 @@ namespace TicketApp
         }
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {
-            SocialEvent selectedSocialEvent = (SocialEvent) listBoxSocialEvents.SelectedItem;
-            BuyTicketForm buyTicket = new BuyTicketForm(selectedSocialEvent);
+            BuyTicketForm buyTicket = new BuyTicketForm((SocialEvent)listBoxSocialEvents.SelectedItem);
             buyTicket.Show();
         }
     }

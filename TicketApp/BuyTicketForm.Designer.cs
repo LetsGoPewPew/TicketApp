@@ -52,7 +52,7 @@
             this.buttonBuy.TabIndex = 1;
             this.buttonBuy.Text = "Buy";
             this.buttonBuy.UseVisualStyleBackColor = true;
-            this.buttonBuy.Click += new System.EventHandler(this.buttonBuy_Click);
+            this.buttonBuy.Click += new System.EventHandler(this.ButtonBuy_Click);
             // 
             // numericUpDownTickets
             // 

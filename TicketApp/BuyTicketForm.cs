@@ -22,11 +22,14 @@ namespace TicketApp
             textBoxTicketInformation.Text = socialEvent.ToString();
         }
 
-        private void buttonBuy_Click(object sender, EventArgs e)
+        private void ButtonBuy_Click(object sender, EventArgs e)
         {
             if (numericUpDownTickets.Value <= socialEvent.GetAmountOfAvailableTickets())
             {
-                MessageBox.Show("Available !");
+                if (socialEvent.BuyTicket())
+                {
+                    MessageBox.Show("Transaction successfull, email has been sent with the ticket");
+                };
             }
             else
             {

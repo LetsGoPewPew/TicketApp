@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Security;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,26 @@ namespace Library.Model
         {
             return name + " - Available tickets: " + GetAmountOfAvailableTickets() + "/" + maxTickets;
         }
+
+        public bool BuyTicket(User user = null)
+        {
+            //verify purchase
+            //transaction success
+            if(true)
+            {
+                Ticket ticket = new Ticket(this);
+                if (user != null)
+                {
+                    user.OwnedTickets.Add(ticket);
+                }
+
+                return true;
+            }
+            //transaction failed
+            return false;
+
+        }
+        
         
     }
 }
