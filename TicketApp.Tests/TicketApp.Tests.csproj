@@ -51,6 +51,7 @@
     <Compile Include="SocialEventTests.cs" />
     <Compile Include="TicketTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserLogicTests.cs" />
     <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
