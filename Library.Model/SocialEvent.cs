@@ -48,16 +48,19 @@ namespace Library.Model
             return name + " - Available tickets: " + GetAmountOfAvailableTickets() + "/" + maxTickets;
         }
 
-        public bool BuyTicket(User user = null)
+        public bool BuyTickets(int amountOfTickets, User user = null)
         {
             //verify purchase
             //transaction success
             if(true)
             {
-                Ticket ticket = new Ticket(this);
-                if (user != null)
+                for (int i = 0; i < amountOfTickets; i++)
                 {
-                    user.OwnedTickets.Add(ticket);
+                    Ticket ticket = new Ticket(this);
+                    if (user != null)
+                    {
+                        user.OwnedTickets.Add(ticket);
+                    }
                 }
 
                 return true;

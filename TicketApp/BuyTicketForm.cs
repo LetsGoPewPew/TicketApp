@@ -19,15 +19,16 @@ namespace TicketApp
             InitializeComponent();
             this.socialEvent = socialEvent;
 
-            textBoxTicketInformation.Text = socialEvent.ToString();
+            UpdateInfo();
         }
 
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
             if (numericUpDownTickets.Value <= socialEvent.GetAmountOfAvailableTickets())
             {
-                if (socialEvent.BuyTicket())
+                if (socialEvent.BuyTickets(Decimal.ToInt32(numericUpDownTickets.Value)))
                 {
+                    UpdateInfo();
                     MessageBox.Show("Transaction successfull, email has been sent with the ticket");
                 };
             }
@@ -36,5 +37,11 @@ namespace TicketApp
                 MessageBox.Show("This event only has " + socialEvent.GetAmountOfAvailableTickets() + " tickets available.");
             }
         }
+
+        private void UpdateInfo()
+        {
+            textBoxTicketInformation.Text = socialEvent.ToString();
+        }
+        
     }
 }

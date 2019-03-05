@@ -57,9 +57,24 @@
             // numericUpDownTickets
             // 
             this.numericUpDownTickets.Location = new System.Drawing.Point(134, 83);
+            this.numericUpDownTickets.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
+            this.numericUpDownTickets.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericUpDownTickets.Name = "numericUpDownTickets";
             this.numericUpDownTickets.Size = new System.Drawing.Size(46, 20);
             this.numericUpDownTickets.TabIndex = 2;
+            this.numericUpDownTickets.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // textBoxNumberOfTicketsDescription
             // 
