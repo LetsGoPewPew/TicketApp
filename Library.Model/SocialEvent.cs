@@ -11,6 +11,9 @@ namespace Library.Model
     {
         private static int numberOfSocialEventsCreated = 0;
 
+        private string name;
+        public string Name { get => name; set => name = value; }
+
         private string category;
         public string Category { get => category; set => category = value; }
 
@@ -25,17 +28,23 @@ namespace Library.Model
 
         private int id;
         public int Id { get => id; private set => id = value; }
-        public SocialEvent(int maxTickets, string category = "")
+        public SocialEvent(int maxTickets, string category = "", string name = "")
         {
             this.Id = numberOfSocialEventsCreated++;
             this.maxTickets = maxTickets;
             this.category = category;
+            this.name = name;
             socialEventList.Add(this);
         }
 
         public int GetAmountOfAvailableTickets()
         {
             return maxTickets - ticketsForThisSocialEvent.Count;
+        }
+
+        public override string ToString()
+        {
+            return name + " - Available tickets: " + GetAmountOfAvailableTickets() + "/" + maxTickets;
         }
         
     }

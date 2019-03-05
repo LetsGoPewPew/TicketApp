@@ -16,6 +16,27 @@ namespace TicketApp
         public LoginForm()
         {
             InitializeComponent();
+            FillTestData();
+        }
+
+        private void FillTestData()
+        {
+            Customer customer1 = new Customer("1", "1", "1");
+            Customer customer2 = new Customer("2", "2", "2");
+
+            SocialEvent socialEvent1 = new SocialEvent(5, "Art", "Kristine og Ramona synger bæ bæ lille lam");
+            SocialEvent socialEvent2 = new SocialEvent(7, "Sports", "Stian og Jørgen Sjonglerer med datamus");
+            SocialEvent socialEvent3 = new SocialEvent(9, "TalentShow", "Juan kjører solo dukkeshow");
+
+            Ticket ticket1 = new Ticket(socialEvent1);
+            Ticket ticket2 = new Ticket(socialEvent1);
+            Ticket ticket3 = new Ticket(socialEvent1);
+            Ticket ticket4 = new Ticket(socialEvent1);
+            Ticket ticket5 = new Ticket(socialEvent2);
+            Ticket ticket6 = new Ticket(socialEvent2);
+            Ticket ticket7 = new Ticket(socialEvent2);
+            Ticket ticket8 = new Ticket(socialEvent3);
+
         }
 
         private void ButtonLogin_Click(object sender, EventArgs e)
@@ -24,7 +45,9 @@ namespace TicketApp
             {
                 if (UserLogic.Login(TextEmail.Text, TextPassword.Text))
                 {
-                    MessageBox.Show("Access allowed !");
+                    //MessageBox.Show("Access allowed !");
+                    SocialEventListForm socialEventListForm = new SocialEventListForm();
+                    socialEventListForm.Show();
                 }
                 else
                 {
