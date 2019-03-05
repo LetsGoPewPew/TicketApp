@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using Library.Model;
@@ -27,6 +28,13 @@ namespace TicketApp.Tests
         public void Assert_that_amount_of_remaining_tickets_is_correct()
         {
             Assert.AreEqual(7, socialEvent.GetAmountOfAvailableTickets());
+        }
+
+        [Test]
+        public void Assert_that_amount_of_remaining_tickets_is_correct_after_one_has_been_sold()
+        {
+            socialEvent.BuyTickets(1);
+            Assert.AreEqual(6, socialEvent.GetAmountOfAvailableTickets());
         }
     }
 }
