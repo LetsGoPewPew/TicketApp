@@ -19,7 +19,7 @@ namespace TicketApp
             InitializeComponent();
             this.socialEvent = socialEvent;
 
-            UpdateInfo();
+            InitializeInfo();
         }
 
         private void ButtonBuy_Click(object sender, EventArgs e)
@@ -28,7 +28,7 @@ namespace TicketApp
             {
                 if (socialEvent.BuyTickets(Decimal.ToInt32(numericUpDownTickets.Value)))
                 {
-                    UpdateInfo();
+                    UpdateSocialEventDescription();
                     MessageBox.Show("Transaction successfull, email has been sent with the ticket");
                 };
             }
@@ -38,9 +38,27 @@ namespace TicketApp
             }
         }
 
-        private void UpdateInfo()
+        private void numericUpDownTickets_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateToPayTextBox();
+        }
+
+        private void InitializeInfo()
+        {
+            UpdateSocialEventDescription();
+            UpdateToPayTextBox();
+            textBoxPricePerTicket.Text = socialEvent.PricePerTicket + "kr";
+        }
+
+        private void UpdateSocialEventDescription()
         {
             textBoxTicketInformation.Text = socialEvent.ToString();
         }
+
+        private void UpdateToPayTextBox()
+        {
+            textBoxToPay.Text = (socialEvent.PricePerTicket * numericUpDownTickets.Value) + "kr";
+        }
+
     }
 }

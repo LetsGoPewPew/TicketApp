@@ -12,6 +12,9 @@ namespace Library.Model
     {
         private static int numberOfSocialEventsCreated = 0;
 
+        private int pricePerTicket;
+        public int PricePerTicket { get => pricePerTicket; set => pricePerTicket = value; }
+
         private string name;
         public string Name { get => name; set => name = value; }
 
@@ -30,11 +33,12 @@ namespace Library.Model
         private int id;
         public int Id { get => id; private set => id = value; }
 
-        public SocialEvent(int maxTickets, string category = "", string name = "")
+        public SocialEvent(int maxTickets, int pricePerTicket, string category = "", string name = "")
         {
             this.maxTickets = maxTickets;
             this.category = category;
             this.name = name;
+            this.pricePerTicket = pricePerTicket;
             Id = numberOfSocialEventsCreated++;
             socialEventList.Add(this);
         }

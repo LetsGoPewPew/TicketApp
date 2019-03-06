@@ -88,6 +88,7 @@
             0,
             0,
             0});
+            this.numericUpDownTickets.ValueChanged += new System.EventHandler(this.numericUpDownTickets_ValueChanged);
             // 
             // textBoxNumberOfTicketsDescription
             // 
