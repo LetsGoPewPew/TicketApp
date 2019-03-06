@@ -15,6 +15,9 @@ namespace Library.Model
         private int pricePerTicket;
         public int PricePerTicket { get => pricePerTicket; set => pricePerTicket = value; }
 
+        private string location;
+        public string Location { get => location; set => location = value; }
+
         private string name;
         public string Name { get => name; set => name = value; }
 
