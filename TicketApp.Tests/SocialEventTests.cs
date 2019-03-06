@@ -13,28 +13,22 @@ namespace TicketApp.Tests
     class SocialEventTests
     {
         private SocialEvent socialEvent;
-        private Ticket ticket1, ticket2, ticket3;
+        private CreditCard creditCard;
+        private int numberOfTickets;
 
         [SetUp]
         public void SetupBeforeEachTest()
         {
-            socialEvent = new SocialEvent(10, 100);
-            ticket1 = new Ticket(socialEvent);
-            ticket2 = new Ticket(socialEvent);
-            ticket3 = new Ticket(socialEvent);
-        }
-
-        [Test]
-        public void Assert_that_amount_of_remaining_tickets_is_correct()
-        {
-            Assert.AreEqual(7, socialEvent.GetAmountOfAvailableTickets());
+            numberOfTickets = 10;
+            socialEvent = new SocialEvent(numberOfTickets, 1);
+            creditCard = new CreditCard("123","123","123","123");
         }
 
         [Test]
         public void Assert_that_amount_of_remaining_tickets_is_correct_after_one_has_been_sold()
         {
-            socialEvent.BuyTickets(1);
-            Assert.AreEqual(6, socialEvent.GetAmountOfAvailableTickets());
+            socialEvent.BuyTickets(1, creditCard);
+            Assert.AreEqual( (numberOfTickets - 1), socialEvent.GetAmountOfAvailableTickets());
         }
     }
 }

@@ -53,11 +53,11 @@ namespace Library.Model
             return name;
         }
 
-        public bool BuyTickets(int amountOfTickets, User user = null)
+        public bool BuyTickets(int amountOfTickets, CreditCard creditCard, User user = null)
         {
-            //verify purchase
-            //transaction success
-            if(true)
+            PaymentService paymentService = new PaymentService(creditCard, (amountOfTickets * pricePerTicket) );
+
+            if(paymentService.VerifyPayment())
             {
                 for (int i = 0; i < amountOfTickets; i++)
                 {
@@ -70,7 +70,7 @@ namespace Library.Model
 
                 return true;
             }
-            //transaction failed
+
             return false;
         }      
     }
