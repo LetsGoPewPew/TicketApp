@@ -12,7 +12,7 @@ namespace Library.Model
         private static int numberOfTicketsCreated = 0;
 
         private SocialEvent socialEvent;
-        public SocialEvent SocialEvent { get => socialEvent; set => socialEvent = value; }
+        public SocialEvent SocialEvent { get => socialEvent; private set => socialEvent = value; }
 
         private int id;
         public int Id { get => id; private set => id = value; }

@@ -42,6 +42,5 @@ namespace TicketApp
         {
             textBoxTicketInformation.Text = socialEvent.ToString();
         }
-        
     }
 }

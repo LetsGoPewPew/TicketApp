@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreditCard.cs" />
     <Compile Include="Organizer.cs" />
+    <Compile Include="PaymentService.cs" />
     <Compile Include="SocialEvent.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

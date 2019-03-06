@@ -29,12 +29,13 @@ namespace Library.Model
 
         private int id;
         public int Id { get => id; private set => id = value; }
+
         public SocialEvent(int maxTickets, string category = "", string name = "")
         {
-            this.Id = numberOfSocialEventsCreated++;
             this.maxTickets = maxTickets;
             this.category = category;
             this.name = name;
+            Id = numberOfSocialEventsCreated++;
             socialEventList.Add(this);
         }
 
@@ -67,9 +68,6 @@ namespace Library.Model
             }
             //transaction failed
             return false;
-
-        }
-        
-        
+        }      
     }
 }
