@@ -28,7 +28,7 @@ namespace TicketApp
             {
                 if (socialEvent.BuyTickets(Decimal.ToInt32(numericUpDownTickets.Value)))
                 {
-                    UpdateSocialEventDescription();
+                    UpdateAvailableTicketsTextBox();
                     MessageBox.Show("Transaction successfull, email has been sent with the ticket");
                 };
             }
@@ -45,14 +45,15 @@ namespace TicketApp
 
         private void InitializeInfo()
         {
-            UpdateSocialEventDescription();
+            textBoxSocialEventDescription.Text = socialEvent.ToString();
+            UpdateAvailableTicketsTextBox();
             UpdateToPayTextBox();
             textBoxPricePerTicket.Text = socialEvent.PricePerTicket + "kr";
         }
 
-        private void UpdateSocialEventDescription()
+        private void UpdateAvailableTicketsTextBox()
         {
-            textBoxTicketInformation.Text = socialEvent.ToString();
+            textBoxTicketsAvailable.Text = socialEvent.GetAmountOfAvailableTickets() + "/" + socialEvent.MaxTickets;
         }
 
         private void UpdateToPayTextBox()

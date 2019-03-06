@@ -50,7 +50,7 @@ namespace Library.Model
 
         public override string ToString()
         {
-            return name + " - Available tickets: " + GetAmountOfAvailableTickets() + "/" + maxTickets;
+            return name;
         }
 
         public bool BuyTickets(int amountOfTickets, User user = null)
