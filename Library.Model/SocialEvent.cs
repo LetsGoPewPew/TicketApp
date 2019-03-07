@@ -54,27 +54,6 @@ namespace Library.Model
         public override string ToString()
         {
             return name;
-        }
-
-        public bool BuyTickets(int amountOfTickets, CreditCard creditCard, User user = null)
-        {
-            PaymentService paymentService = new PaymentService(creditCard, (amountOfTickets * pricePerTicket) );
-
-            if(paymentService.VerifyPayment())
-            {
-                for (int i = 0; i < amountOfTickets; i++)
-                {
-                    Ticket ticket = new Ticket(this);
-                    if (user != null)
-                    {
-                        user.OwnedTickets.Add(ticket);
-                    }
-                }
-
-                return true;
-            }
-
-            return false;
-        }      
+        }    
     }
 }

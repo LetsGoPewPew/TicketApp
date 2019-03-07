@@ -30,24 +30,15 @@
         {
             this.textBoxSocialEventDescription = new System.Windows.Forms.TextBox();
             this.buttonBuy = new System.Windows.Forms.Button();
-            this.numericUpDownTickets = new System.Windows.Forms.NumericUpDown();
+            this.NumericUpDownTickets = new System.Windows.Forms.NumericUpDown();
             this.textBoxNumberOfTicketsDescription = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBoxCardNumber = new System.Windows.Forms.TextBox();
-            this.textBoxCardCode = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBoxExpirationMonth = new System.Windows.Forms.TextBox();
-            this.textBoxExpirationYear = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBoxToPay = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBoxPricePerTicket = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBoxTicketsAvailable = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTickets)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownTickets)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxSocialEventDescription
@@ -69,28 +60,28 @@
             this.buttonBuy.UseVisualStyleBackColor = true;
             this.buttonBuy.Click += new System.EventHandler(this.ButtonBuy_Click);
             // 
-            // numericUpDownTickets
+            // NumericUpDownTickets
             // 
-            this.numericUpDownTickets.Location = new System.Drawing.Point(134, 261);
-            this.numericUpDownTickets.Maximum = new decimal(new int[] {
+            this.NumericUpDownTickets.Location = new System.Drawing.Point(134, 261);
+            this.NumericUpDownTickets.Maximum = new decimal(new int[] {
             10000,
             0,
             0,
             0});
-            this.numericUpDownTickets.Minimum = new decimal(new int[] {
+            this.NumericUpDownTickets.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownTickets.Name = "numericUpDownTickets";
-            this.numericUpDownTickets.Size = new System.Drawing.Size(46, 20);
-            this.numericUpDownTickets.TabIndex = 2;
-            this.numericUpDownTickets.Value = new decimal(new int[] {
+            this.NumericUpDownTickets.Name = "NumericUpDownTickets";
+            this.NumericUpDownTickets.Size = new System.Drawing.Size(46, 20);
+            this.NumericUpDownTickets.TabIndex = 2;
+            this.NumericUpDownTickets.Value = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDownTickets.ValueChanged += new System.EventHandler(this.numericUpDownTickets_ValueChanged);
+            this.NumericUpDownTickets.ValueChanged += new System.EventHandler(this.NumericUpDownTickets_ValueChanged);
             // 
             // textBoxNumberOfTicketsDescription
             // 
@@ -101,82 +92,6 @@
             this.textBoxNumberOfTicketsDescription.TabIndex = 3;
             this.textBoxNumberOfTicketsDescription.Text = "Number of tickets:";
             this.textBoxNumberOfTicketsDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(12, 159);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(73, 20);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.Text = "Card number:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(12, 211);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(73, 20);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.Text = "Card code:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(12, 185);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(116, 20);
-            this.textBox3.TabIndex = 6;
-            this.textBox3.Text = "Expiration Month-Year:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(181, 185);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(10, 20);
-            this.textBox4.TabIndex = 7;
-            this.textBox4.Text = "-";
-            // 
-            // textBoxCardNumber
-            // 
-            this.textBoxCardNumber.Location = new System.Drawing.Point(91, 160);
-            this.textBoxCardNumber.Name = "textBoxCardNumber";
-            this.textBoxCardNumber.Size = new System.Drawing.Size(247, 20);
-            this.textBoxCardNumber.TabIndex = 10;
-            // 
-            // textBoxCardCode
-            // 
-            this.textBoxCardCode.Location = new System.Drawing.Point(92, 212);
-            this.textBoxCardCode.Name = "textBoxCardCode";
-            this.textBoxCardCode.Size = new System.Drawing.Size(124, 20);
-            this.textBoxCardCode.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(246, 185);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 12;
-            this.textBox5.Text = "Ex: 04-2019";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxExpirationMonth
-            // 
-            this.textBoxExpirationMonth.Location = new System.Drawing.Point(132, 185);
-            this.textBoxExpirationMonth.Name = "textBoxExpirationMonth";
-            this.textBoxExpirationMonth.Size = new System.Drawing.Size(43, 20);
-            this.textBoxExpirationMonth.TabIndex = 13;
-            this.textBoxExpirationMonth.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxExpirationYear
-            // 
-            this.textBoxExpirationYear.Location = new System.Drawing.Point(197, 185);
-            this.textBoxExpirationYear.Name = "textBoxExpirationYear";
-            this.textBoxExpirationYear.Size = new System.Drawing.Size(43, 20);
-            this.textBoxExpirationYear.TabIndex = 14;
-            this.textBoxExpirationYear.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox6
             // 
@@ -249,22 +164,13 @@
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.textBoxToPay);
             this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBoxExpirationYear);
-            this.Controls.Add(this.textBoxExpirationMonth);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBoxCardCode);
-            this.Controls.Add(this.textBoxCardNumber);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxNumberOfTicketsDescription);
-            this.Controls.Add(this.numericUpDownTickets);
+            this.Controls.Add(this.NumericUpDownTickets);
             this.Controls.Add(this.buttonBuy);
             this.Controls.Add(this.textBoxSocialEventDescription);
             this.Name = "BuyTicketForm";
             this.Text = "BuyTicketForm";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownTickets)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownTickets)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -274,17 +180,8 @@
 
         private System.Windows.Forms.TextBox textBoxSocialEventDescription;
         private System.Windows.Forms.Button buttonBuy;
-        private System.Windows.Forms.NumericUpDown numericUpDownTickets;
+        private System.Windows.Forms.NumericUpDown NumericUpDownTickets;
         private System.Windows.Forms.TextBox textBoxNumberOfTicketsDescription;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBoxCardNumber;
-        private System.Windows.Forms.TextBox textBoxCardCode;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBoxExpirationMonth;
-        private System.Windows.Forms.TextBox textBoxExpirationYear;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBoxToPay;
         private System.Windows.Forms.TextBox textBox8;
