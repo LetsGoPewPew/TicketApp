@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net.Mime;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using Library.Logic;
+﻿using Library.Logic;
 using Library.Model;
 using Library.Payment;
+using System;
+using System.Data;
+using System.Linq;
+using System.Reflection;
+using System.Windows.Forms;
 
 namespace TicketApp
 {
@@ -29,7 +23,12 @@ namespace TicketApp
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
             dynamic paymentMethod = ComboPaymentMethod.SelectedItem;
-            PaymentLogic.Pay(paymentMethod, "item", 1);
+            bool successfullPayment = PaymentLogic.Pay(paymentMethod, "item", 1);
+            if (successfullPayment)
+                MessageBox.Show("Successfully bought tickets");
+            else
+                MessageBox.Show("Failed to buy tickets");
+
         }
 
         private void NumericUpDownTickets_ValueChanged(object sender, EventArgs e)
