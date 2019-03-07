@@ -98,6 +98,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.Logic\Library.Logic.csproj">
+      <Project>{17b8366c-527a-40d2-8269-09b85b41a748}</Project>
+      <Name>Library.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Model\Library.Model.csproj">
       <Project>{A487D7A1-752B-4AFF-AA10-C0A4E47BFE19}</Project>
       <Name>Library.Model</Name>

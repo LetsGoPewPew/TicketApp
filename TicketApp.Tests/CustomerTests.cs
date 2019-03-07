@@ -1,4 +1,5 @@
-﻿using Library.Model;
+﻿using Library.Logic;
+using Library.Model;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;

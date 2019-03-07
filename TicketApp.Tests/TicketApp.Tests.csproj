@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
+    <Compile Include="PaymentLogicTests.cs" />
     <Compile Include="SocialEventTests.cs" />
     <Compile Include="TicketTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,9 +59,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.Logic\Library.Logic.csproj">
+      <Project>{17B8366C-527A-40D2-8269-09B85B41A748}</Project>
+      <Name>Library.Logic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Model\Library.Model.csproj">
       <Project>{a487d7a1-752b-4aff-aa10-c0a4e47bfe19}</Project>
       <Name>Library.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Payment\Library.Payment.csproj">
+      <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
+      <Name>Library.Payment</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
