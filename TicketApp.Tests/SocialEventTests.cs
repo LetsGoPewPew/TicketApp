@@ -13,7 +13,6 @@ namespace TicketApp.Tests
     class SocialEventTests
     {
         private SocialEvent socialEvent;
-        private CreditCard creditCard;
         private int numberOfTickets;
 
         [SetUp]
@@ -21,7 +20,6 @@ namespace TicketApp.Tests
         {
             numberOfTickets = 10;
             socialEvent = new SocialEvent(numberOfTickets, 1);
-            creditCard = new CreditCard("123","123","123","123");
         }
 
         [Test]
