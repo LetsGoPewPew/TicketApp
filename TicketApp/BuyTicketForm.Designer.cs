@@ -38,6 +38,7 @@
             this.textBoxPricePerTicket = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBoxTicketsAvailable = new System.Windows.Forms.TextBox();
+            this.ComboPaymentMethod = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownTickets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             // 
             // buttonBuy
             // 
-            this.buttonBuy.Location = new System.Drawing.Point(10, 334);
+            this.buttonBuy.Location = new System.Drawing.Point(12, 351);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(75, 23);
             this.buttonBuy.TabIndex = 1;
@@ -153,11 +154,20 @@
             this.textBoxTicketsAvailable.Text = "0/0";
             this.textBoxTicketsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // ComboPaymentMethod
+            // 
+            this.ComboPaymentMethod.FormattingEnabled = true;
+            this.ComboPaymentMethod.Location = new System.Drawing.Point(7, 324);
+            this.ComboPaymentMethod.Name = "ComboPaymentMethod";
+            this.ComboPaymentMethod.Size = new System.Drawing.Size(121, 21);
+            this.ComboPaymentMethod.TabIndex = 21;
+            // 
             // BuyTicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ComboPaymentMethod);
             this.Controls.Add(this.textBoxTicketsAvailable);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBoxPricePerTicket);
@@ -188,5 +198,6 @@
         private System.Windows.Forms.TextBox textBoxPricePerTicket;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBoxTicketsAvailable;
+        private System.Windows.Forms.ComboBox ComboPaymentMethod;
     }
 }

@@ -38,10 +38,10 @@ namespace Library.Model
 
         public SocialEvent(int maxTickets, int pricePerTicket, string category = "", string name = "")
         {
-            this.maxTickets = maxTickets;
-            this.category = category;
-            this.name = name;
-            this.pricePerTicket = pricePerTicket;
+            this.MaxTickets = maxTickets;
+            this.Category = category;
+            this.Name = name;
+            this.PricePerTicket = pricePerTicket;
             Id = numberOfSocialEventsCreated++;
             socialEventList.Add(this);
         }

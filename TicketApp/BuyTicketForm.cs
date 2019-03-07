@@ -5,10 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Net.Mime;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Library.Logic;
 using Library.Model;
+using Library.Payment;
 
 namespace TicketApp
 {
@@ -21,12 +24,12 @@ namespace TicketApp
             this.socialEvent = socialEvent;
 
             InitializeInfo();
-
         }
 
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
-
+            dynamic paymentMethod = ComboPaymentMethod.SelectedItem;
+            PaymentLogic.Pay(paymentMethod, "item", 1);
         }
 
         private void NumericUpDownTickets_ValueChanged(object sender, EventArgs e)
@@ -40,6 +43,14 @@ namespace TicketApp
             UpdateAvailableTicketsTextBox();
             UpdateToPayTextBox();
             textBoxPricePerTicket.Text = socialEvent.PricePerTicket + "kr";
+
+            var paymentMethods = Assembly.GetAssembly(typeof(IPayment)).GetTypes()
+                .Where(myType => myType.GetInterfaces().Contains(typeof(IPayment)));
+
+            foreach(Type paymentMethod in paymentMethods)
+            {
+                ComboPaymentMethod.Items.Add(Activator.CreateInstance(paymentMethod, true));
+            }
         }
 
         private void UpdateAvailableTicketsTextBox()

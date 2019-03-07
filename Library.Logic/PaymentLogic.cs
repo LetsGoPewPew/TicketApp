@@ -9,7 +9,7 @@ namespace Library.Logic
 {
     public class PaymentLogic
     {
-        public bool Pay<T>(T paymentMethod, string item, int price) where T : IPayment
+        public static bool Pay<T>(T paymentMethod, string item, int price) where T : IPayment
         {
             return paymentMethod.PayForItem(item, price);
         }

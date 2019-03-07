@@ -106,6 +106,10 @@
       <Project>{A487D7A1-752B-4AFF-AA10-C0A4E47BFE19}</Project>
       <Name>Library.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library.Payment\Library.Payment.csproj">
+      <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
+      <Name>Library.Payment</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
