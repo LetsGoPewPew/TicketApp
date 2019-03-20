@@ -13,18 +13,18 @@ namespace TicketApp
 {
     public partial class SocialEventListForm : Form
     {
-        public SocialEventListForm(Point location)
+        public SocialEventListForm()
         {
             InitializeComponent();
-            this.Location = location;
 
             listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
         }
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {
-            BuyTicketForm buyTicket = new BuyTicketForm((SocialEvent)listBoxSocialEvents.SelectedItem, this.Location)
+            BuyTicketForm buyTicket = new BuyTicketForm((SocialEvent)listBoxSocialEvents.SelectedItem)
             {
-                StartPosition = FormStartPosition.Manual
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
             };
             buyTicket.Show();
         }

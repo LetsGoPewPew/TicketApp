@@ -13,11 +13,10 @@ namespace TicketApp
     public partial class BuyTicketForm : Form
     {
         private SocialEvent socialEvent;
-        public BuyTicketForm(SocialEvent socialEvent, Point location)
+        public BuyTicketForm(SocialEvent socialEvent)
         {
             InitializeComponent();
             this.socialEvent = socialEvent;
-            this.Location = location;
 
             InitializeInfo();
         }

@@ -45,10 +45,10 @@ namespace TicketApp
             {
                 if (UserLogic.Login(TextEmail.Text, TextPassword.Text))
                 {
-                    //MessageBox.Show("Access allowed !");
-                    SocialEventListForm socialEventListForm = new SocialEventListForm(this.Location)
+                    SocialEventListForm socialEventListForm = new SocialEventListForm()
                     {
-                        StartPosition = FormStartPosition.Manual
+                        StartPosition = FormStartPosition.Manual,
+                        Location = this.Location
                     };
                     socialEventListForm.Show();
                     this.Hide();
