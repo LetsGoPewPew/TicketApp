@@ -53,7 +53,7 @@
             // 
             // buttonBuy
             // 
-            this.buttonBuy.Location = new System.Drawing.Point(12, 351);
+            this.buttonBuy.Location = new System.Drawing.Point(53, 351);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(75, 23);
             this.buttonBuy.TabIndex = 1;
@@ -99,17 +99,17 @@
             this.textBox6.Location = new System.Drawing.Point(12, 298);
             this.textBox6.Name = "textBox6";
             this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(50, 20);
+            this.textBox6.Size = new System.Drawing.Size(75, 20);
             this.textBox6.TabIndex = 15;
             this.textBox6.Text = "To pay:";
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBoxToPay
             // 
-            this.textBoxToPay.Location = new System.Drawing.Point(68, 298);
+            this.textBoxToPay.Location = new System.Drawing.Point(93, 298);
             this.textBoxToPay.Name = "textBoxToPay";
             this.textBoxToPay.ReadOnly = true;
-            this.textBoxToPay.Size = new System.Drawing.Size(57, 20);
+            this.textBoxToPay.Size = new System.Drawing.Size(82, 20);
             this.textBoxToPay.TabIndex = 16;
             this.textBoxToPay.Text = "0kr";
             this.textBoxToPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -159,7 +159,7 @@
             this.ComboPaymentMethod.FormattingEnabled = true;
             this.ComboPaymentMethod.Location = new System.Drawing.Point(7, 324);
             this.ComboPaymentMethod.Name = "ComboPaymentMethod";
-            this.ComboPaymentMethod.Size = new System.Drawing.Size(121, 21);
+            this.ComboPaymentMethod.Size = new System.Drawing.Size(168, 21);
             this.ComboPaymentMethod.TabIndex = 21;
             // 
             // BuyTicketForm
