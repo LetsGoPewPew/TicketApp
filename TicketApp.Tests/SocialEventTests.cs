@@ -21,5 +21,12 @@ namespace TicketApp.Tests
             numberOfTickets = 10;
             socialEvent = new SocialEvent(numberOfTickets, 1);
         }
+
+        [Test]
+        public void Assert_that_amount_of_remaining_tickets_is_correct_after_one_has_been_sold()
+        {
+            socialEvent.BuyTickets(1, creditCard);
+            Assert.AreEqual( (numberOfTickets - 1), socialEvent.GetAmountOfAvailableTickets());
+        }
     }
 }
