@@ -63,16 +63,6 @@
             this.ButtonLogout.UseVisualStyleBackColor = true;
             this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
             // 
-            // ButtonVerify
-            // 
-            this.ButtonVerify.Location = new System.Drawing.Point(669, 395);
-            this.ButtonVerify.Name = "ButtonVerify";
-            this.ButtonVerify.Size = new System.Drawing.Size(119, 23);
-            this.ButtonVerify.TabIndex = 3;
-            this.ButtonVerify.Text = "Verify account";
-            this.ButtonVerify.UseVisualStyleBackColor = true;
-            this.ButtonVerify.Click += new System.EventHandler(this.ButtonVerify_Click);
-            // 
             // ButtonCreateSocialEvent
             // 
             this.ButtonCreateSocialEvent.Enabled = false;
@@ -83,6 +73,16 @@
             this.ButtonCreateSocialEvent.Text = "Create Event";
             this.ButtonCreateSocialEvent.UseVisualStyleBackColor = true;
             this.ButtonCreateSocialEvent.Click += new System.EventHandler(this.ButtonCreateSocialEvent_Click);
+            // 
+            // ButtonVerify
+            // 
+            this.ButtonVerify.Location = new System.Drawing.Point(669, 270);
+            this.ButtonVerify.Name = "ButtonVerify";
+            this.ButtonVerify.Size = new System.Drawing.Size(119, 23);
+            this.ButtonVerify.TabIndex = 3;
+            this.ButtonVerify.Text = "Verify account";
+            this.ButtonVerify.UseVisualStyleBackColor = true;
+            this.ButtonVerify.Click += new System.EventHandler(this.ButtonVerify_Click);
             // 
             // SocialEventListForm
             // 
