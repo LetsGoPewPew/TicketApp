@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Library.Payment
 {
-    public class Vips : IPayment
+    public class Vipps : IPayment
     {
         public bool PayForItem(string item, int price)
         {
-            Console.WriteLine("Vips");
+            Console.WriteLine("Vipps");
             return true;
         }
     }

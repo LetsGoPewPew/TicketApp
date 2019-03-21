@@ -67,5 +67,16 @@ namespace TicketApp
             };
             createSocialEventForm.Show();
         }
+
+        private void ButtonVerify_Click(object sender, EventArgs e)
+        {
+            VerifyForm verifyForm = new VerifyForm()
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            verifyForm.Show();
+            this.Hide();
+        }
     }
 }
