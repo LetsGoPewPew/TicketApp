@@ -13,5 +13,10 @@ namespace Library.Verification
             Console.WriteLine("BankID");
             return true;
         }
+
+        public override string ToString()
+        {
+            return "BankID";
+        }
     }
 }

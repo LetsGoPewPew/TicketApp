@@ -99,6 +99,9 @@
     <EmbeddedResource Include="SocialEventListForm.resx">
       <DependentUpon>SocialEventListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VerifyForm.resx">
+      <DependentUpon>VerifyForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -124,6 +127,10 @@
     <ProjectReference Include="..\Library.Payment\Library.Payment.csproj">
       <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
       <Name>Library.Payment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Verification\Library.Verification.csproj">
+      <Project>{1ed99d0f-2a50-4ae5-a4ab-bde82f503414}</Project>
+      <Name>Library.Verification</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

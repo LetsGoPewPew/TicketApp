@@ -9,5 +9,9 @@ namespace Library.Payment
             Console.WriteLine("CreditCard");
             return true;
         }
+        public override string ToString()
+        {
+            return "Credit card";
+        }
     }
 }

@@ -75,8 +75,7 @@ namespace TicketApp
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
             };
-            verifyForm.Show();
-            this.Hide();
+            verifyForm.ShowDialog();
         }
     }
 }

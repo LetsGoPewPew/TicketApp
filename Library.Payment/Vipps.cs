@@ -13,5 +13,11 @@ namespace Library.Payment
             Console.WriteLine("Vipps");
             return true;
         }
+
+        public override string ToString()
+        {
+            return "Vipps";
+        }
+
     }
 }

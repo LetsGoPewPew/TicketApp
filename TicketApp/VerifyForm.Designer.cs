@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.ComboVerificationMethod = new System.Windows.Forms.ComboBox();
+            this.ButtonVerify = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // ComboVerificationMethod
+            // 
+            this.ComboVerificationMethod.FormattingEnabled = true;
+            this.ComboVerificationMethod.Location = new System.Drawing.Point(256, 241);
+            this.ComboVerificationMethod.Name = "ComboVerificationMethod";
+            this.ComboVerificationMethod.Size = new System.Drawing.Size(240, 21);
+            this.ComboVerificationMethod.TabIndex = 0;
+            // 
+            // ButtonVerify
+            // 
+            this.ButtonVerify.Location = new System.Drawing.Point(256, 312);
+            this.ButtonVerify.Name = "ButtonVerify";
+            this.ButtonVerify.Size = new System.Drawing.Size(75, 23);
+            this.ButtonVerify.TabIndex = 1;
+            this.ButtonVerify.Text = "Verify";
+            this.ButtonVerify.UseVisualStyleBackColor = true;
+            this.ButtonVerify.Click += new System.EventHandler(this.ButtonVerify_Click);
+            // 
+            // VerifyForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonVerify);
+            this.Controls.Add(this.ComboVerificationMethod);
+            this.Name = "VerifyForm";
             this.Text = "VerifyForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox ComboVerificationMethod;
+        private System.Windows.Forms.Button ButtonVerify;
     }
 }
