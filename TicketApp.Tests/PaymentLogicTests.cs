@@ -13,13 +13,13 @@ namespace TicketApp.Tests
     public class PaymentLogicTests
     {
         private CreditCard creditCard;
-        private Vips vips;
+        private Vipps vipps;
 
         [SetUp]
         public void SetupBeforeEachTest()
         {
             creditCard = new CreditCard();
-            vips = new Vips();
+            vipps = new Vipps();
         }
 
         [Test]
@@ -31,7 +31,7 @@ namespace TicketApp.Tests
         [Test]
         public void Assert_vips_can_pay()
         {
-            Assert.True(PaymentLogic.Pay(vips, "item", 100));
+            Assert.True(PaymentLogic.Pay(vipps, "item", 100));
         }
     }
 }
