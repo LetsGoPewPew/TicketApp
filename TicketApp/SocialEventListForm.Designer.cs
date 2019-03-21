@@ -31,6 +31,7 @@
             this.listBoxSocialEvents = new System.Windows.Forms.ListBox();
             this.buttonBuyTicket = new System.Windows.Forms.Button();
             this.ButtonLogout = new System.Windows.Forms.Button();
+            this.ButtonCreateSocialEvent = new System.Windows.Forms.Button();
             this.ButtonVerify = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // ButtonLogout
             // 
-            this.ButtonLogout.Location = new System.Drawing.Point(668, 100);
+            this.ButtonLogout.Location = new System.Drawing.Point(668, 396);
             this.ButtonLogout.Name = "ButtonLogout";
             this.ButtonLogout.Size = new System.Drawing.Size(120, 23);
             this.ButtonLogout.TabIndex = 2;
@@ -72,12 +73,24 @@
             this.ButtonVerify.UseVisualStyleBackColor = true;
             this.ButtonVerify.Click += new System.EventHandler(this.ButtonVerify_Click);
             // 
+            // ButtonCreateSocialEvent
+            // 
+            this.ButtonCreateSocialEvent.Enabled = false;
+            this.ButtonCreateSocialEvent.Location = new System.Drawing.Point(668, 170);
+            this.ButtonCreateSocialEvent.Name = "ButtonCreateSocialEvent";
+            this.ButtonCreateSocialEvent.Size = new System.Drawing.Size(120, 23);
+            this.ButtonCreateSocialEvent.TabIndex = 3;
+            this.ButtonCreateSocialEvent.Text = "Create Event";
+            this.ButtonCreateSocialEvent.UseVisualStyleBackColor = true;
+            this.ButtonCreateSocialEvent.Click += new System.EventHandler(this.ButtonCreateSocialEvent_Click);
+            // 
             // SocialEventListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.ButtonVerify);
+            this.Controls.Add(this.ButtonCreateSocialEvent);
             this.Controls.Add(this.ButtonLogout);
             this.Controls.Add(this.buttonBuyTicket);
             this.Controls.Add(this.listBoxSocialEvents);
@@ -93,5 +106,6 @@
         private System.Windows.Forms.Button buttonBuyTicket;
         private System.Windows.Forms.Button ButtonLogout;
         private System.Windows.Forms.Button ButtonVerify;
+        private System.Windows.Forms.Button ButtonCreateSocialEvent;
     }
 }

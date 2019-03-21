@@ -17,6 +17,7 @@ namespace TicketApp
         {
             Customer customer1 = new Customer("1", "1", "1");
             Customer customer2 = new Customer("2", "2", "2");
+            Organizer organizer1 = new Organizer("3", "3", "3");
 
             SocialEvent socialEvent1 = new SocialEvent(5, 133, "Art", "Kristine og Ramona synger bæ bæ lille lam");
             SocialEvent socialEvent2 = new SocialEvent(7, 5643, "Sports", "Stian og Jørgen Sjonglerer med datamus");
