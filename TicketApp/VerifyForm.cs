@@ -47,7 +47,7 @@ namespace TicketApp
                 MessageBox.Show("Verification Failed.");
             }
 
-            this.Hide();
+            this.Close();
         }
     }
 
