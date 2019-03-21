@@ -23,8 +23,7 @@ namespace TicketApp
 
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
-            dynamic paymentMethod = ComboPaymentMethod.SelectedItem;
-            IPayment IpaymentMethod = (IPayment)paymentMethod;
+            IPayment paymentMethod = (IPayment)ComboPaymentMethod.SelectedItem;
 
             int numberOfTickets = (int)NumericUpDownTickets.Value;
             if(numberOfTickets > socialEvent.GetAmountOfAvailableTickets())
@@ -33,19 +32,19 @@ namespace TicketApp
                 return;
             }
 
-            if (PaymentLogic.Pay(paymentMethod, socialEvent.Name, numberOfTickets))
+            int price = numberOfTickets * socialEvent.PricePerTicket;
+            if (paymentMethod.PayForItem(socialEvent.Name, price))
             {
                 for(int i = 0; i < numberOfTickets; i++)
                 {
                     new Ticket(socialEvent);
                 }
-                SocialEventLogic.BuyTickets(paymentMethod, numberOfTickets, socialEvent.PricePerTicket);
 
                 UpdateAvailableTicketsTextBox();
-                MessageBox.Show("Successfully bought tickets", IpaymentMethod.ToString());
+                MessageBox.Show("Successfully bought tickets", paymentMethod.ToString());
             }
             else
-                MessageBox.Show("Failed to buy tickets", IpaymentMethod.ToString());
+                MessageBox.Show("Failed to buy tickets", paymentMethod.ToString());
         }
 
         private void NumericUpDownTickets_ValueChanged(object sender, EventArgs e)
