@@ -31,6 +31,7 @@
             this.listBoxSocialEvents = new System.Windows.Forms.ListBox();
             this.buttonBuyTicket = new System.Windows.Forms.Button();
             this.ButtonLogout = new System.Windows.Forms.Button();
+            this.ButtonVerify = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxSocialEvents
@@ -61,11 +62,22 @@
             this.ButtonLogout.UseVisualStyleBackColor = true;
             this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
             // 
+            // ButtonVerify
+            // 
+            this.ButtonVerify.Location = new System.Drawing.Point(669, 395);
+            this.ButtonVerify.Name = "ButtonVerify";
+            this.ButtonVerify.Size = new System.Drawing.Size(119, 23);
+            this.ButtonVerify.TabIndex = 3;
+            this.ButtonVerify.Text = "Verify account";
+            this.ButtonVerify.UseVisualStyleBackColor = true;
+            this.ButtonVerify.Click += new System.EventHandler(this.ButtonVerify_Click);
+            // 
             // SocialEventListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonVerify);
             this.Controls.Add(this.ButtonLogout);
             this.Controls.Add(this.buttonBuyTicket);
             this.Controls.Add(this.listBoxSocialEvents);
@@ -80,5 +92,6 @@
         private System.Windows.Forms.ListBox listBoxSocialEvents;
         private System.Windows.Forms.Button buttonBuyTicket;
         private System.Windows.Forms.Button ButtonLogout;
+        private System.Windows.Forms.Button ButtonVerify;
     }
 }
