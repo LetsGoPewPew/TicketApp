@@ -25,13 +25,13 @@ namespace TicketApp.Tests
         [Test]
         public void Assert_creditcard_can_pay()
         {
-            Assert.True(PaymentLogic.Pay(creditCard, "item", 100));
+            Assert.True(creditCard.PayForItem("item", 100));
         }
 
         [Test]
         public void Assert_vips_can_pay()
         {
-            Assert.True(PaymentLogic.Pay(vipps, "item", 100));
+            Assert.True(vipps.PayForItem("item", 100));
         }
     }
 }
