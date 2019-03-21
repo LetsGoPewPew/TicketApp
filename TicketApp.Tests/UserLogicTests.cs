@@ -12,12 +12,11 @@ namespace TicketApp.Tests
     [TestFixture]
     class UserLogicTests
     {
-        private Customer customer1, customer2;
+        private Customer customer1;
         [SetUp]
         public void SetupBeforeEachTest()
         {
             customer1 = new Customer("name1", "email1", "password1");
-            customer2 = new Customer("name2", "email2", "password2");
         }
 
         [Test]
@@ -36,6 +35,20 @@ namespace TicketApp.Tests
         public void Assert_that_user_can_authorize()
         {
             Assert.True(UserLogic.Authorize("email1", "password1"));
+        }
+
+        [Test]
+        public void Assert_upgrade_customer()
+        {
+            Organizer newOrganizer = UserLogic.UpgradeCustomer(customer1);
+            Assert.True(newOrganizer.GetType() == typeof(Organizer));
+        }
+
+        [Test]
+        public void Assert_upgrade_customer_deleted_from_customer_list()
+        {
+            Organizer newOrganizer = UserLogic.UpgradeCustomer(customer1);
+            Assert.IsNotEmpty(Customer.CustomerList);
         }
     }
 }

@@ -43,5 +43,13 @@ namespace Library.Logic
             }
             return null;
         }
+
+        public static Organizer UpgradeCustomer(Customer customer)
+        {
+            Organizer newOrganizer = new Organizer((Customer)customer);
+            User.UserList.Remove(customer);
+            Customer.CustomerList.Remove((Customer)customer);
+            return newOrganizer;
+        }
     }
 }

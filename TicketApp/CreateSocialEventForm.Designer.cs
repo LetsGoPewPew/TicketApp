@@ -58,6 +58,11 @@
             // NumericUpDownTotalTickets
             // 
             this.NumericUpDownTotalTickets.Location = new System.Drawing.Point(244, 72);
+            this.NumericUpDownTotalTickets.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.NumericUpDownTotalTickets.Name = "NumericUpDownTotalTickets";
             this.NumericUpDownTotalTickets.Size = new System.Drawing.Size(100, 20);
             this.NumericUpDownTotalTickets.TabIndex = 3;
@@ -75,6 +80,11 @@
             // NumericUpDownTicketPrice
             // 
             this.NumericUpDownTicketPrice.Location = new System.Drawing.Point(244, 98);
+            this.NumericUpDownTicketPrice.Maximum = new decimal(new int[] {
+            1000000000,
+            0,
+            0,
+            0});
             this.NumericUpDownTicketPrice.Name = "NumericUpDownTicketPrice";
             this.NumericUpDownTicketPrice.Size = new System.Drawing.Size(100, 20);
             this.NumericUpDownTicketPrice.TabIndex = 5;
