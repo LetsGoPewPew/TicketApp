@@ -28,5 +28,16 @@ namespace TicketApp
             };
             buyTicket.Show();
         }
+
+        private void ButtonLogout_Click(object sender, EventArgs e)
+        {
+            LoginForm loginForm = new LoginForm()
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            loginForm.Show();
+            this.Hide();
+        }
     }
 }

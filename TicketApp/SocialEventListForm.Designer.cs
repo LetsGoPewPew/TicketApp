@@ -30,6 +30,7 @@
         {
             this.listBoxSocialEvents = new System.Windows.Forms.ListBox();
             this.buttonBuyTicket = new System.Windows.Forms.Button();
+            this.ButtonLogout = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxSocialEvents
@@ -50,11 +51,22 @@
             this.buttonBuyTicket.UseVisualStyleBackColor = true;
             this.buttonBuyTicket.Click += new System.EventHandler(this.ButtonBuyTicket_Click);
             // 
+            // ButtonLogout
+            // 
+            this.ButtonLogout.Location = new System.Drawing.Point(668, 100);
+            this.ButtonLogout.Name = "ButtonLogout";
+            this.ButtonLogout.Size = new System.Drawing.Size(120, 23);
+            this.ButtonLogout.TabIndex = 2;
+            this.ButtonLogout.Text = "Log out";
+            this.ButtonLogout.UseVisualStyleBackColor = true;
+            this.ButtonLogout.Click += new System.EventHandler(this.ButtonLogout_Click);
+            // 
             // SocialEventListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonLogout);
             this.Controls.Add(this.buttonBuyTicket);
             this.Controls.Add(this.listBoxSocialEvents);
             this.Name = "SocialEventListForm";
@@ -67,5 +79,6 @@
 
         private System.Windows.Forms.ListBox listBoxSocialEvents;
         private System.Windows.Forms.Button buttonBuyTicket;
+        private System.Windows.Forms.Button ButtonLogout;
     }
 }
