@@ -20,7 +20,11 @@ namespace TicketApp
             InitializeComponent();
 
             listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
-            this.Text = user.Name;
+
+            if(user == null)
+                this.Text = "Guest login";
+            else
+                this.Text = $"Logged in as: {user.Name}";
         }
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {

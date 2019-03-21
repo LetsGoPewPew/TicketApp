@@ -51,19 +51,17 @@ namespace TicketApp
 
             if (UserLogic.Login(email, password))
             {
-                User user = UserLogic.GetUserByEmail(email);
-                SocialEventListForm socialEventListForm = new SocialEventListForm(user)
-                {
-                    StartPosition = FormStartPosition.Manual,
-                    Location = this.Location
-                };
-                socialEventListForm.Show();
-                this.Hide();
+                GoTosocialEventListForm(UserLogic.GetUserByEmail(email));
             }
             else
             {
                 MessageBox.Show("Access denied !");
             }
+        }
+
+        private void ButtonNoLoggin_Click(object sender, EventArgs e)
+        {
+            GoTosocialEventListForm(null);
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
@@ -78,6 +76,17 @@ namespace TicketApp
                 User.UserList.Add(new Customer("", TextEmail.Text, TextPassword.Text));
                 MessageBox.Show("Successfully registered ! :D");
             }
+        }
+
+        private void GoTosocialEventListForm(User currentUser)
+        {
+            SocialEventListForm socialEventListForm = new SocialEventListForm(currentUser)
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            socialEventListForm.Show();
+            this.Hide();
         }
 
         private bool CheckInputFields()
