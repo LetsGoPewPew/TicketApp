@@ -6,9 +6,9 @@ namespace Library.Logic
     {
         public static bool Login(string email, string password)
         {
-            foreach (Customer customer in Customer.CustomerList)
+            foreach (User user in User.UserList)
             {
-                if (customer.Email == email && customer.Password == password)
+                if (user.Email == email && user.Password == password)
                     return true;
             }
             return false;

@@ -24,8 +24,20 @@ namespace TicketApp
             if(user == null)
                 this.Text = "Guest login";
             else
+            {
                 this.Text = $"Logged in as: {user.Name}";
+                if(user.GetType() == typeof(Library.Model.Organizer))
+                {
+                    ButtonCreateSocialEvent.Enabled = true;
+                    this.Text += " (Organizer)";
+                }
+                else
+                {
+                    this.Text += " (Customer)";
+                }
+            }
         }
+
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {
             BuyTicketForm buyTicket = new BuyTicketForm((SocialEvent)listBoxSocialEvents.SelectedItem)
@@ -45,6 +57,16 @@ namespace TicketApp
             };
             loginForm.Show();
             this.Hide();
+        }
+
+        private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
+        {
+            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(CurrentUser)
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            createSocialEventForm.Show();
         }
     }
 }

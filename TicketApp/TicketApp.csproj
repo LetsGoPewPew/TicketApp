@@ -75,6 +75,9 @@
     <EmbeddedResource Include="BuyTicketForm.resx">
       <DependentUpon>BuyTicketForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CreateSocialEventForm.resx">
+      <DependentUpon>CreateSocialEventForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
