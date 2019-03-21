@@ -59,7 +59,7 @@ namespace TicketApp
                 Location = this.Location
             };
             socialEventListForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private bool CheckInputFields()
