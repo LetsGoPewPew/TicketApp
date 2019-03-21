@@ -8,14 +8,18 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Library.Model;
 using Library.Verification;
 
 namespace TicketApp
 {
     public partial class VerifyForm : Form
     {
-        public VerifyForm()
+        User CurrentUser = null;
+        public VerifyForm(User currentUser)
         {
+            CurrentUser = currentUser;
+
             InitializeComponent();
             InitializeInfo();
         }
@@ -40,11 +44,32 @@ namespace TicketApp
 
             if(result == true)
             {
-                MessageBox.Show("Verification Success!");
+                if(CurrentUser.GetType() == typeof(Customer))
+                {
+                    new Organizer((Customer)CurrentUser);
+                    User.UserList.Remove(CurrentUser);
+                    Customer.CustomerList.Remove((Customer)CurrentUser);
+                    MessageBox.Show("Verification Success!");
+
+                    LoginForm loginForm = new LoginForm()
+                    {
+                        StartPosition = FormStartPosition.Manual,
+                        Location = this.Location
+                    };
+                    this.Close();
+                    loginForm.Show();
+                }
             }
             else
             {
                 MessageBox.Show("Verification Failed.");
+                SocialEventListForm socialEventListForm = new SocialEventListForm(CurrentUser)
+                {
+                    StartPosition = FormStartPosition.Manual,
+                    Location = this.Location
+                };
+                this.Close();
+                socialEventListForm.Show();
             }
 
             this.Hide();

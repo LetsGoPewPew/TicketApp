@@ -60,7 +60,7 @@ namespace TicketApp
                 Location = this.Location
             };
             loginForm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
@@ -75,12 +75,13 @@ namespace TicketApp
 
         private void ButtonVerify_Click(object sender, EventArgs e)
         {
-            VerifyForm verifyForm = new VerifyForm()
+            VerifyForm verifyForm = new VerifyForm(CurrentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
             };
-            verifyForm.ShowDialog();
+            verifyForm.Show();
+            this.Close();
         }
 
         private void ButtonRefreshSocialEventList_Click(object sender, EventArgs e)
