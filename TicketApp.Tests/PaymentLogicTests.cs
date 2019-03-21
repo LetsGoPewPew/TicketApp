@@ -29,7 +29,7 @@ namespace TicketApp.Tests
         }
 
         [Test]
-        public void Assert_vips_can_pay()
+        public void Assert_vipps_can_pay()
         {
             Assert.True(vipps.PayForItem("item", 100));
         }

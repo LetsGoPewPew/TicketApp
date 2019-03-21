@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Library.Logic;
 using Library.Model;
 using Library.Verification;
 
@@ -46,9 +47,7 @@ namespace TicketApp
             {
                 if(CurrentUser.GetType() == typeof(Customer))
                 {
-                    new Organizer((Customer)CurrentUser);
-                    User.UserList.Remove(CurrentUser);
-                    Customer.CustomerList.Remove((Customer)CurrentUser);
+                    UserLogic.UpgradeCustomer((Customer)CurrentUser);
                     MessageBox.Show("Verification Success!");
 
                     LoginForm loginForm = new LoginForm()
