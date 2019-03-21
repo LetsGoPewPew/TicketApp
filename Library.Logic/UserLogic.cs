@@ -33,5 +33,15 @@ namespace Library.Logic
             }
             return false;
         }
+
+        public static User GetUserByEmail(string email)
+        {
+            foreach (User user in User.UserList)
+            {
+                if (user.Email == email)
+                    return user;
+            }
+            return null;
+        }
     }
 }

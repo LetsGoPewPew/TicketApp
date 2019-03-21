@@ -41,22 +41,28 @@ namespace TicketApp
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            if (CheckInputFields() == true)
+            if (CheckInputFields() == false)
             {
-                if (UserLogic.Login(TextEmail.Text, TextPassword.Text))
+                MessageBox.Show("You must fill in username/password");
+                return;
+            }
+            string email = TextEmail.Text;
+            string password = TextPassword.Text;
+
+            if (UserLogic.Login(email, password))
+            {
+                User user = UserLogic.GetUserByEmail(email);
+                SocialEventListForm socialEventListForm = new SocialEventListForm(user)
                 {
-                    SocialEventListForm socialEventListForm = new SocialEventListForm()
-                    {
-                        StartPosition = FormStartPosition.Manual,
-                        Location = this.Location
-                    };
-                    socialEventListForm.Show();
-                    this.Hide();
-                }
-                else
-                {
-                    MessageBox.Show("Access denied !");
-                }
+                    StartPosition = FormStartPosition.Manual,
+                    Location = this.Location
+                };
+                socialEventListForm.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Access denied !");
             }
         }
 
@@ -73,6 +79,7 @@ namespace TicketApp
                 MessageBox.Show("Successfully registered ! :D");
             }
         }
+
         private bool CheckInputFields()
         {
             if (String.IsNullOrEmpty(TextEmail.Text) ||

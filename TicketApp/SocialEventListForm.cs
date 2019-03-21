@@ -13,11 +13,14 @@ namespace TicketApp
 {
     public partial class SocialEventListForm : Form
     {
-        public SocialEventListForm()
+        User CurrentUser = null;
+        public SocialEventListForm(User user)
         {
+            CurrentUser = user;
             InitializeComponent();
 
             listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
+            this.Text = user.Name;
         }
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {
