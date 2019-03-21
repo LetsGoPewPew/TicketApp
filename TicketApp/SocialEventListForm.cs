@@ -18,7 +18,6 @@ namespace TicketApp
         {
             CurrentUser = user;
             InitializeComponent();
-
             listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
 
             if(user == null)
