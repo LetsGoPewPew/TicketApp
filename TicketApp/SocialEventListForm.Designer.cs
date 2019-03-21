@@ -33,6 +33,7 @@
             this.ButtonLogout = new System.Windows.Forms.Button();
             this.ButtonCreateSocialEvent = new System.Windows.Forms.Button();
             this.ButtonVerify = new System.Windows.Forms.Button();
+            this.ButtonRefreshSocialEventList = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // listBoxSocialEvents
@@ -65,13 +66,13 @@
             // 
             // ButtonCreateSocialEvent
             // 
-            this.ButtonCreateSocialEvent.Enabled = false;
             this.ButtonCreateSocialEvent.Location = new System.Drawing.Point(668, 170);
             this.ButtonCreateSocialEvent.Name = "ButtonCreateSocialEvent";
             this.ButtonCreateSocialEvent.Size = new System.Drawing.Size(120, 23);
             this.ButtonCreateSocialEvent.TabIndex = 3;
             this.ButtonCreateSocialEvent.Text = "Create Event";
             this.ButtonCreateSocialEvent.UseVisualStyleBackColor = true;
+            this.ButtonCreateSocialEvent.Visible = false;
             this.ButtonCreateSocialEvent.Click += new System.EventHandler(this.ButtonCreateSocialEvent_Click);
             // 
             // ButtonVerify
@@ -82,13 +83,25 @@
             this.ButtonVerify.TabIndex = 3;
             this.ButtonVerify.Text = "Verify account";
             this.ButtonVerify.UseVisualStyleBackColor = true;
+            this.ButtonVerify.Visible = false;
             this.ButtonVerify.Click += new System.EventHandler(this.ButtonVerify_Click);
+            // 
+            // ButtonRefreshSocialEventList
+            // 
+            this.ButtonRefreshSocialEventList.Location = new System.Drawing.Point(669, 327);
+            this.ButtonRefreshSocialEventList.Name = "ButtonRefreshSocialEventList";
+            this.ButtonRefreshSocialEventList.Size = new System.Drawing.Size(119, 23);
+            this.ButtonRefreshSocialEventList.TabIndex = 4;
+            this.ButtonRefreshSocialEventList.Text = "Refresh";
+            this.ButtonRefreshSocialEventList.UseVisualStyleBackColor = true;
+            this.ButtonRefreshSocialEventList.Click += new System.EventHandler(this.ButtonRefreshSocialEventList_Click);
             // 
             // SocialEventListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonRefreshSocialEventList);
             this.Controls.Add(this.ButtonVerify);
             this.Controls.Add(this.ButtonCreateSocialEvent);
             this.Controls.Add(this.ButtonLogout);
@@ -107,5 +120,6 @@
         private System.Windows.Forms.Button ButtonLogout;
         private System.Windows.Forms.Button ButtonVerify;
         private System.Windows.Forms.Button ButtonCreateSocialEvent;
+        private System.Windows.Forms.Button ButtonRefreshSocialEventList;
     }
 }

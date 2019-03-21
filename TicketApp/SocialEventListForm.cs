@@ -25,14 +25,19 @@ namespace TicketApp
             else
             {
                 this.Text = $"Logged in as: {user.Name}";
-                if(user.GetType() == typeof(Library.Model.Organizer))
+                if(user.GetType() == typeof(Organizer))
                 {
-                    ButtonCreateSocialEvent.Enabled = true;
+                    ButtonCreateSocialEvent.Visible = true;
                     this.Text += " (Organizer)";
                 }
                 else
                 {
                     this.Text += " (Customer)";
+                }
+
+                if(user.GetType() == typeof(Customer))
+                {
+                    ButtonVerify.Visible = true;
                 }
             }
         }
@@ -77,6 +82,12 @@ namespace TicketApp
             };
             verifyForm.Show();
             this.Hide();
+        }
+
+        private void ButtonRefreshSocialEventList_Click(object sender, EventArgs e)
+        {
+            listBoxSocialEvents.DataSource = null;
+            listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
         }
     }
 }
