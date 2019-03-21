@@ -31,5 +31,11 @@ namespace TicketApp.Tests
         {
             Assert.True(UserLogic.Login(customer1.Email, customer1.Password));
         }
+
+        [Test]
+        public void Assert_that_user_can_authorize()
+        {
+            Assert.True(UserLogic.Authorize("email1", "password1"));
+        }
     }
 }

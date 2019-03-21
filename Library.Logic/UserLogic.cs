@@ -23,5 +23,15 @@ namespace Library.Logic
             }
             return false;
         }
+
+        public static bool Authorize(string email, string password)
+        {
+            foreach(User user in User.UserList)
+            {
+                if (user.Email == email && user.Password == password)
+                    return true;
+            }
+            return false;
+        }
     }
 }
