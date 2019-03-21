@@ -19,5 +19,12 @@ namespace Library.Model
 
             Organizer.OrganizerList.Add(this);
         }
+
+        public Organizer(Customer customer) : base(customer.Name, customer.Email, customer.Password)
+        {
+            NumberOfOrganizersCreated++;
+
+            Organizer.OrganizerList.Add(this);
+        }
     }
 }
