@@ -29,7 +29,7 @@ namespace TicketApp
             Organizer organizer1 = new Organizer("3", "3", "3");
 
             // TODO: Remove this
-            TestPersistent tp = new TestPersistent();
+            PersistencyDispatcher tp = new PersistencyDispatcher();
             tp.Customers.List.Add(customer1);
             tp.Customers.List[0].Email = "nyemail";
             tp.Customers.List.Add(customer2);
