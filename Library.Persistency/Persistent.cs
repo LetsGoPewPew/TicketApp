@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
@@ -10,17 +12,31 @@ namespace Library.Persistency
 {
     public class Persistent<T>
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private ObservableCollection<T> _List;
-        public ObservableCollection<T> List { get => _List; set => _List = value; }
-        
+        public ObservableCollection<T> List
+        {
+            get => _List;
+            set
+            {
+                List = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ListObserveable"));
+            }
+        }
+
         public Persistent()
         {
-            List.CollectionChanged += List_CollectionChanged;
+            List = new ObservableCollection<T>();
         }
 
         private void List_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             Debug.WriteLine("Change type: " + e.Action);
+            if(e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                Debug.WriteLine("removed");
+            }
             if (e.NewItems != null)
             {
                 Debug.WriteLine("Items added: ");
