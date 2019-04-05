@@ -9,10 +9,10 @@ namespace Library.Persistency
 {
     public interface IPersistency
     {
-        void Store(string data);
-        void Store(SocialEvent socialEvent);
-        void Store(Organizer organizer);
-        void Store(Customer customer);
-        void Store(Ticket ticket);
+        void Persist(string data);
+        void Persist(SocialEvent socialEvent);
+        void Persist(Organizer organizer);
+        void Persist(Customer customer);
+        void Persist(Ticket ticket);
     }
 }
