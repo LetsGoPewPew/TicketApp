@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="IPersistency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Persistent.cs" />
+    <Compile Include="TestPersistent.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library.Model\Library.Model.csproj">
