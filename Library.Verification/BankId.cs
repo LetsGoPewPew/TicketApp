@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Verification
 {
-    public class BankId : IVerification
+    public class BankId : IVerificationMethod
     {
         public bool Verify()
         {

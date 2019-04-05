@@ -27,8 +27,8 @@ namespace TicketApp
 
         private void InitializeInfo()
         {
-            var verificationMethods = Assembly.GetAssembly(typeof(IVerification)).GetTypes()
-                .Where(myType => myType.GetInterfaces().Contains(typeof(IVerification)));
+            var verificationMethods = Assembly.GetAssembly(typeof(IVerificationMethod)).GetTypes()
+                .Where(myType => myType.GetInterfaces().Contains(typeof(IVerificationMethod)));
 
             foreach (Type verificationMethod in verificationMethods)
             {
@@ -40,7 +40,7 @@ namespace TicketApp
 
         private void ButtonVerify_Click(object sender, EventArgs e)
         {
-            IVerification iVerificationMethod = (IVerification)ComboVerificationMethod.SelectedItem;
+            IVerificationMethod iVerificationMethod = (IVerificationMethod)ComboVerificationMethod.SelectedItem;
             bool result = iVerificationMethod.Verify();
 
             if(result == true)

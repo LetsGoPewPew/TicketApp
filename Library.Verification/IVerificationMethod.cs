@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Verification
 {
-    public interface IVerification
+    public interface IVerificationMethod
     {
         bool Verify();
     }
