@@ -7,26 +7,28 @@ using Library.Model;
 
 namespace Library.Persistency
 {
-    class FakeListPersist : IPersistMethod
+    public class FakeListPersist : IPersistMethod
     {
+        public List<Customer> Customers = new List<Customer>();
+
         public void Create<T>(T data)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Create: {data}");
         }
 
         public void Delete<T>(T data)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Delete: {data}");
         }
 
         public void Read<T>(T data)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Read: {data}");
         }
 
         public void Update<T>(T data)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"Update: {data}");
         }
     }
 }

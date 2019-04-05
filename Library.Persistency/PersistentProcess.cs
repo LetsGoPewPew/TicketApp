@@ -2,11 +2,19 @@
 
 namespace Library.Persistency
 {
-    public class PersistentProcess
+    public class PersistentProcess<T> where T:IPersistMethod
     {
-        public PersistentEventHandler<Customer> Customers = new PersistentEventHandler<Customer>();
-        public PersistentEventHandler<Organizer> Organizers = new PersistentEventHandler<Organizer>();
-        public PersistentEventHandler<SocialEvent> SocialEvents = new PersistentEventHandler<SocialEvent>();
-        public PersistentEventHandler<Ticket> Tickets = new PersistentEventHandler<Ticket>();
+        public PersistentEventHandler<Customer, IPersistMethod> Customers;
+        public PersistentEventHandler<Organizer, IPersistMethod> Organizers;
+        public PersistentEventHandler<SocialEvent, IPersistMethod> SocialEvents;
+        public PersistentEventHandler<Ticket, IPersistMethod> Tickets;
+
+        public PersistentProcess(T persistMethod) 
+        {
+            Customers = new PersistentEventHandler<Customer, IPersistMethod>(persistMethod);
+            Organizers = new PersistentEventHandler<Organizer, IPersistMethod>(persistMethod);
+            SocialEvents = new PersistentEventHandler<SocialEvent, IPersistMethod>(persistMethod);
+            Tickets= new PersistentEventHandler<Ticket, IPersistMethod>(persistMethod);
+        }
     }
 }

@@ -29,14 +29,11 @@ namespace TicketApp
             Organizer organizer1 = new Organizer("3", "3", "3");
 
             // TODO: Remove this
-            PersistencyDispatcher tp = new PersistencyDispatcher();
-            tp.Customers.List.Add(customer1);
-            tp.Customers.List[0].Email = "nyemail";
-            tp.Customers.List.Add(customer2);
-            foreach(Customer c in tp.Customers.List)
-            {
-                Console.WriteLine(c.Email);
-            }
+            FakeListPersist flp = new FakeListPersist();
+            PersistentProcess<FakeListPersist> pp = new PersistentProcess<FakeListPersist>(flp);
+            pp.Customers.List.Add(customer1);
+            pp.Customers.List.Add(customer2);
+
 
             SocialEvent socialEvent1 = new SocialEvent(5, 133, "Art", "Kristine og Ramona synger bæ bæ lille lam");
             SocialEvent socialEvent2 = new SocialEvent(7, 5643, "Sports", "Stian og Jørgen Sjonglerer med datamus");
