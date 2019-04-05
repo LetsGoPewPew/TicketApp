@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Payment
 {
-    public class Vipps : IPayment
+    public class Vipps : IPaymentMethod
     {
         public bool PayForItem(string item, int price)
         {

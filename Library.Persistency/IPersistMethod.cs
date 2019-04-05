@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Persistency
 {
-    public interface IPersistency
+    public interface IPersistMethod
     {
         void Persist(string data);
         void Persist(SocialEvent socialEvent);

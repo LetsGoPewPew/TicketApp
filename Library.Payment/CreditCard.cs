@@ -2,7 +2,7 @@
 
 namespace Library.Payment
 {
-    public class CreditCard : IPayment
+    public class CreditCard : IPaymentMethod
     {
         public bool PayForItem(string item, int price)
         {

@@ -23,7 +23,7 @@ namespace TicketApp
 
         private void ButtonBuy_Click(object sender, EventArgs e)
         {
-            IPayment paymentMethod = (IPayment)ComboPaymentMethod.SelectedItem;
+            IPaymentMethod paymentMethod = (IPaymentMethod)ComboPaymentMethod.SelectedItem;
 
             int numberOfTickets = (int)NumericUpDownTickets.Value;
             if(numberOfTickets > socialEvent.GetAmountOfAvailableTickets())
@@ -59,8 +59,8 @@ namespace TicketApp
             UpdateToPayTextBox();
             textBoxPricePerTicket.Text = socialEvent.PricePerTicket + "kr";
 
-            var paymentMethods = Assembly.GetAssembly(typeof(IPayment)).GetTypes()
-                .Where(myType => myType.GetInterfaces().Contains(typeof(IPayment)));
+            var paymentMethods = Assembly.GetAssembly(typeof(IPaymentMethod)).GetTypes()
+                .Where(myType => myType.GetInterfaces().Contains(typeof(IPaymentMethod)));
 
             foreach(Type paymentMethod in paymentMethods)
             {
