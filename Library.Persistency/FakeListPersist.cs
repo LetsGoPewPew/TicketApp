@@ -7,7 +7,7 @@ using Library.Model;
 
 namespace Library.Persistency
 {
-    class FakeListPersist : IPersistency
+    class FakeListPersist : IPersistMethod
     {
         public void Persist(string data)
         {

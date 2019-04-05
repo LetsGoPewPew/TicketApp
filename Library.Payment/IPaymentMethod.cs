@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Payment
 {
-    public interface IPayment
+    public interface IPaymentMethod
     {
         bool PayForItem(string item, int price);
     }

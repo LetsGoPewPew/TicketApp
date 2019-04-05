@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreditCard.cs" />
-    <Compile Include="IPayment.cs" />
+    <Compile Include="IPaymentMethod.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vipps.cs" />
   </ItemGroup>
