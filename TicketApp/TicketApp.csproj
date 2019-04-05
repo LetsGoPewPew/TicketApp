@@ -128,6 +128,10 @@
       <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
       <Name>Library.Payment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
+      <Project>{D61F19E4-2BE4-4BFB-AFEA-E5AFDD04AC40}</Project>
+      <Name>Library.Persistency</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Verification\Library.Verification.csproj">
       <Project>{1ed99d0f-2a50-4ae5-a4ab-bde82f503414}</Project>
       <Name>Library.Verification</Name>
