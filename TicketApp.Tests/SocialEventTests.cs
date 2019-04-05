@@ -21,5 +21,11 @@ namespace TicketApp.Tests
             numberOfTickets = 10;
             socialEvent = new SocialEvent(numberOfTickets, 1);
         }
+
+        [Test]
+        public void Assert_socialEvent_created()
+        {
+            Assert.IsNotEmpty(SocialEvent.SocialEventList);
+        }
     }
 }
