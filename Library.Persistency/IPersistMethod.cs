@@ -9,10 +9,10 @@ namespace Library.Persistency
 {
     public interface IPersistMethod
     {
-        void Persist(string data);
-        void Persist(SocialEvent socialEvent);
-        void Persist(Organizer organizer);
-        void Persist(Customer customer);
-        void Persist(Ticket ticket);
+        void Create<T>(T data);
+        void Read<T>(T data);
+        void Update<T>(T data);
+        void Delete<T>(T data);
+
     }
 }

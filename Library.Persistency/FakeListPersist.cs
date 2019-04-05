@@ -9,27 +9,22 @@ namespace Library.Persistency
 {
     class FakeListPersist : IPersistMethod
     {
-        public void Persist(string data)
+        public void Create<T>(T data)
         {
             throw new NotImplementedException();
         }
 
-        public void Persist(SocialEvent socialEvent)
+        public void Delete<T>(T data)
         {
             throw new NotImplementedException();
         }
 
-        public void Persist(Organizer organizer)
+        public void Read<T>(T data)
         {
             throw new NotImplementedException();
         }
 
-        public void Persist(Customer customer)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Persist(Ticket ticket)
+        public void Update<T>(T data)
         {
             throw new NotImplementedException();
         }
