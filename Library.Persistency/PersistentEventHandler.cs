@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace Library.Persistency
 {
-    public class Persistent<T>
+    public class PersistentEventHandler<T>
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

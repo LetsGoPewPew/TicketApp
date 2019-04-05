@@ -44,8 +44,8 @@
     <Compile Include="IPersistMethod.cs" />
     <Compile Include="FakeListPersist.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Persistent.cs" />
-    <Compile Include="TestPersistency.cs" />
+    <Compile Include="PersistentEventHandler.cs" />
+    <Compile Include="PersistentProcess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Library.Model\Library.Model.csproj">
