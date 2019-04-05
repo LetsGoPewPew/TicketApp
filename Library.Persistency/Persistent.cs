@@ -1,26 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
+using System.ComponentModel;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Library.Persistency
 {
     public class Persistent<T>
     {
-        private ObservableCollection<T> _List;
-        public ObservableCollection<T> List { get => _List; set => _List = value; }
-        
-        public Persistent()
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        private ObservableCollection<T> _List = new ObservableCollection<T>();
+        public ObservableCollection<T> List
         {
-            List.CollectionChanged += List_CollectionChanged;
+            get => _List;
+            set
+            {
+                List = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("ListObserveable"));
+            }
         }
 
         private void List_CollectionChanged(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
             Debug.WriteLine("Change type: " + e.Action);
+            if(e.Action == NotifyCollectionChangedAction.Remove)
+            {
+                Debug.WriteLine("removed");
+            }
             if (e.NewItems != null)
             {
                 Debug.WriteLine("Items added: ");

@@ -1,4 +1,5 @@
 ﻿using Library.Model;
+using Library.Persistency;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,10 +24,19 @@ namespace TicketApp
 
         private static void FillTestData()
         {
-
             Customer customer1 = new Customer("1", "1", "1");
             Customer customer2 = new Customer("2", "2", "2");
             Organizer organizer1 = new Organizer("3", "3", "3");
+
+            // TODO: Remove this
+            TestPersistent tp = new TestPersistent();
+            tp.Customers.List.Add(customer1);
+            tp.Customers.List[0].Email = "nyemail";
+            tp.Customers.List.Add(customer2);
+            foreach(Customer c in tp.Customers.List)
+            {
+                Console.WriteLine(c.Email);
+            }
 
             SocialEvent socialEvent1 = new SocialEvent(5, 133, "Art", "Kristine og Ramona synger bæ bæ lille lam");
             SocialEvent socialEvent2 = new SocialEvent(7, 5643, "Sports", "Stian og Jørgen Sjonglerer med datamus");
@@ -46,8 +56,6 @@ namespace TicketApp
             Ticket ticket6 = new Ticket(socialEvent2);
             Ticket ticket7 = new Ticket(socialEvent2);
             Ticket ticket8 = new Ticket(socialEvent3);
-
         }
-
     }
 }
