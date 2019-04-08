@@ -15,44 +15,19 @@ namespace Library.PersistenceAdapter
             UnitOfWorkRepository = unitOfWorkRepository;
         }
 
-        public void Add(T entity)
+        public void GetT(IRepository<T> repo, T entity)
         {
-            switch (entity)
-            {
-                default:
-                case Customer customer:
-                    UnitOfWorkRepository.CustomerRepository.Add(entity as Customer);
-                    break;
-                case Organizer organizer:
-                    UnitOfWorkRepository.OrganizerRepository.Add(entity as Organizer);
-                    break;
-                case SocialEvent socialEvent:
-                    UnitOfWorkRepository.SocialEventRepository.Add(entity as SocialEvent);
-                    break;
-                case Ticket ticket:
-                    UnitOfWorkRepository.TicketRepository.Add(entity as Ticket);
-                    break;
-            }
+            repo.Add(entity);
         }
 
-        public void Remove(T entity)
+        public void Add(IRepository<T> repository, T entity)
         {
-            switch (entity)
-            {
-                default:
-                case Customer customer:
-                    UnitOfWorkRepository.CustomerRepository.Remove(entity as Customer);
-                    break;
-                case Organizer organizer:
-                    UnitOfWorkRepository.OrganizerRepository.Remove(entity as Organizer);
-                    break;
-                case SocialEvent socialEvent:
-                    UnitOfWorkRepository.SocialEventRepository.Remove(entity as SocialEvent);
-                    break;
-                case Ticket ticket:
-                    UnitOfWorkRepository.TicketRepository.Remove(entity as Ticket);
-                    break;
-            }
+            repository.Add(entity);
+        }
+
+        public void Remove(IRepository<T> repository, T entity)
+        {
+            repository.Remove(entity);
         }
 
         public void Dispose()
