@@ -15,6 +15,8 @@ namespace Library.Persistency
             new GenericRepository<Organizer>(_dbContext);
         public IRepository<SocialEvent> SocialEventRepository =>
             new GenericRepository<SocialEvent>(_dbContext);
+        public IRepository<Ticket> TicketRepository =>
+            new GenericRepository<Ticket>(_dbContext);
 
         public UnitOfWork(MyDbContext dbContext)
         {

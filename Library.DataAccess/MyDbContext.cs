@@ -13,6 +13,7 @@ namespace Library.DataAccess
         public virtual DbSet<Customer> Customers { get; set; }
         public virtual DbSet<Organizer> Organizers { get; set; }
         public virtual DbSet<SocialEvent> SocialEvents { get; set; }
+        public virtual DbSet<Ticket> Tickets { get; set; }
 
         public MyDbContext(string connectionString) : base (connectionString)
         {
