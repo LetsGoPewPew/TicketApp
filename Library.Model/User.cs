@@ -13,7 +13,6 @@ namespace Library.Model
 
         private static int NumbersOfUsersCreated = 0;
 
-        [Key]
         private int id;
         public int Id { get => id; private set => id = value; }
 

@@ -3,7 +3,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Model
 {
-    [Table("Customer")]
     public class Customer : User
     {
         private static int NumberOfCustomersCreated = 0;
