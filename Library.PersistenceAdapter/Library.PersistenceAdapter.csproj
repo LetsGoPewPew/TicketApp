@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>7.1</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -46,6 +47,10 @@
     <Compile Include="AdapterGenericRepository.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.Model\Library.Model.csproj">
+      <Project>{A487D7A1-752B-4AFF-AA10-C0A4E47BFE19}</Project>
+      <Name>Library.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
       <Project>{BDA1C974-AD2C-445F-941C-6F2E5B343C30}</Project>
       <Name>Library.Persistency</Name>
