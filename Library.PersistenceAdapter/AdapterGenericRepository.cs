@@ -23,16 +23,17 @@ namespace Library.PersistenceAdapter
 
         public void Dispose()
         {
+            UnitOfWorkRepository.Dispose();
         }
 
         public void Save()
         {
-            throw new NotImplementedException();
+            UnitOfWorkRepository.Commit();
         }
 
         public void Undo()
         {
-            throw new NotImplementedException();
+            UnitOfWorkRepository.RejectChanges();
         }
     }
 }
