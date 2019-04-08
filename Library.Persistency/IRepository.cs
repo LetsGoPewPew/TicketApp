@@ -8,7 +8,7 @@ namespace Library.Persistency
 {
     public interface IRepository<T> where T : class
     {
-        IQueryable Entities { get; }
+        IQueryable<T> Entities { get; }
 
         void Remove(T entity);
 
