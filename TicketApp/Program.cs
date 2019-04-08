@@ -1,5 +1,4 @@
 ﻿using Library.Model;
-using Library.Persistency;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,13 +26,6 @@ namespace TicketApp
             Customer customer1 = new Customer("1", "1", "1");
             Customer customer2 = new Customer("2", "2", "2");
             Organizer organizer1 = new Organizer("3", "3", "3");
-
-            // TODO: Remove this
-            FakeListPersist flp = new FakeListPersist();
-            PersistentProcess<FakeListPersist> pp = new PersistentProcess<FakeListPersist>(flp);
-            pp.Customers.List.Add(customer1);
-            pp.Customers.List.Add(customer2);
-
 
             SocialEvent socialEvent1 = new SocialEvent(5, 133, "Art", "Kristine og Ramona synger bæ bæ lille lam");
             SocialEvent socialEvent2 = new SocialEvent(7, 5643, "Sports", "Stian og Jørgen Sjonglerer med datamus");
