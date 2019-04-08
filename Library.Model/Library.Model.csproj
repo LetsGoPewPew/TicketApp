@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Organizer.cs" />
+    <Compile Include="Receipt.cs" />
     <Compile Include="SocialEvent.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
