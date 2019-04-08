@@ -10,10 +10,12 @@ namespace Library.DataAccess
         {
             Customer customer1 = new Customer("1", "1", "1");
             Customer customer2 = new Customer("2", "2", "2");
+
             context.Customers.Add(customer1);
             context.Customers.Add(customer2);
 
             Organizer organizer1 = new Organizer("3", "3", "3");
+
             context.Organizers.Add(organizer1);
 
             SocialEvent socialEvent1 = new SocialEvent(5, 133, "Art", "Kristine og Ramona synger bæ bæ lille lam");
@@ -25,6 +27,7 @@ namespace Library.DataAccess
             SocialEvent socialEvent7 = new SocialEvent(5, 768, "Concert", "Test event 4 (concert)");
             SocialEvent socialEvent8 = new SocialEvent(7, 654, "Art", "Test event 5 (art)");
             SocialEvent socialEvent9 = new SocialEvent(9, 564, "TalentShow", "Test event 6 (talentShow)");
+
             context.SocialEvents.Add(socialEvent1);
             context.SocialEvents.Add(socialEvent2);
             context.SocialEvents.Add(socialEvent3);
@@ -43,6 +46,7 @@ namespace Library.DataAccess
             Ticket ticket6 = new Ticket(socialEvent2);
             Ticket ticket7 = new Ticket(socialEvent2);
             Ticket ticket8 = new Ticket(socialEvent3);
+
             context.Tickets.Add(ticket1);
             context.Tickets.Add(ticket2);
             context.Tickets.Add(ticket3);
