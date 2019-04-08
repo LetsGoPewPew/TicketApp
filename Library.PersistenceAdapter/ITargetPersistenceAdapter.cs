@@ -5,7 +5,7 @@
         void Add(T entity);
         void Remove(T entity);
 
-        void Delete();
+        void Dispose();
         void Undo();
         void Save();
     }

@@ -16,14 +16,13 @@ namespace Library.PersistenceAdapter
         {
         }
 
-        public void Delete(T entity)
-        {
-            GenericDatabaseRepository.Remove(entity);
-        }
-
         public void Remove(T a)
         {
             throw new NotImplementedException();
+        }
+
+        public void Dispose()
+        {
         }
 
         public void Save(T a )
@@ -32,21 +31,6 @@ namespace Library.PersistenceAdapter
         }
 
         public void Undo(T a)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Undo()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Save()
         {
             throw new NotImplementedException();
         }
