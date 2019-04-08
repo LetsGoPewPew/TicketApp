@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Persistency", "Libr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.DataAccess", "Library.DataAccess\Library.DataAccess.csproj", "{7C0867F3-F5B4-4976-BA2D-484CDD3F7F8D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.PersistenceAdapter", "Library.PersistenceAdapter\Library.PersistenceAdapter.csproj", "{9FBD0336-3614-4598-813D-A1534489A67D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{7C0867F3-F5B4-4976-BA2D-484CDD3F7F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C0867F3-F5B4-4976-BA2D-484CDD3F7F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C0867F3-F5B4-4976-BA2D-484CDD3F7F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FBD0336-3614-4598-813D-A1534489A67D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FBD0336-3614-4598-813D-A1534489A67D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FBD0336-3614-4598-813D-A1534489A67D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FBD0336-3614-4598-813D-A1534489A67D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
