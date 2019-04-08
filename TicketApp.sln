@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Payment", "Library.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Verification", "Library.Verification\Library.Verification.csproj", "{1ED99D0F-2A50-4AE5-A4AB-BDE82F503414}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Library.Persistency", "Library.Persistency\Library.Persistency.csproj", "{D61F19E4-2BE4-4BFB-AFEA-E5AFDD04AC40}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,10 +45,6 @@ Global
 		{1ED99D0F-2A50-4AE5-A4AB-BDE82F503414}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1ED99D0F-2A50-4AE5-A4AB-BDE82F503414}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1ED99D0F-2A50-4AE5-A4AB-BDE82F503414}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D61F19E4-2BE4-4BFB-AFEA-E5AFDD04AC40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D61F19E4-2BE4-4BFB-AFEA-E5AFDD04AC40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D61F19E4-2BE4-4BFB-AFEA-E5AFDD04AC40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D61F19E4-2BE4-4BFB-AFEA-E5AFDD04AC40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
