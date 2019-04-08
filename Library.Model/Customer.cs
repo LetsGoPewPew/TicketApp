@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Library.Model
 {
+    [Table("Customer")]
     public class Customer : User
     {
         private static int NumberOfCustomersCreated = 0;

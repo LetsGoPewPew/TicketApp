@@ -16,7 +16,10 @@ namespace Library.DataAccess
 
         public MyDbContext(string connectionString) : base (connectionString)
         {
-            
+            Configuration.ProxyCreationEnabled = false;
+
+            Database.Connection.ConnectionString = connectionString;
+            Database.SetInitializer(new LibraryDBInitializer());
         }
     }
 }

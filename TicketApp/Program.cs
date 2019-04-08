@@ -1,8 +1,5 @@
 ﻿using Library.Model;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicketApp
@@ -17,7 +14,17 @@ namespace TicketApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            
+            /*
+            // https://stackoverflow.com/questions/21563940/how-to-connect-to-localdb-in-visual-studio-server-explorer
+            MyDbContext context = new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True");
+            UnitOfWork unitOfWork = new UnitOfWork(context);
+            var customers = unitOfWork.CustomerRepository.Entities
+                .Where(n => n.Email == "1");
+           */
             FillTestData();
+
+
             Application.Run(new LoginForm());
         }
 

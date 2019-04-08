@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Library.Model
 {
@@ -16,6 +13,7 @@ namespace Library.Model
 
         private static int NumbersOfUsersCreated = 0;
 
+        [Key]
         private int id;
         public int Id { get => id; private set => id = value; }
 
