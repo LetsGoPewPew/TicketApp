@@ -30,6 +30,11 @@ namespace Library.Model
         private int id;
         public int Id { get => id; private set => id = value; }
 
+        public SocialEvent()
+        {
+
+        }
+
         public SocialEvent(int maxTickets, int pricePerTicket, string category = "", string name = "")
         {
             this.MaxTickets = maxTickets;
