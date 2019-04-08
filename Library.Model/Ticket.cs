@@ -26,6 +26,11 @@ namespace Library.Model
         private bool isValid = true;
         public bool IsValid { get => isValid; set => isValid = value; }
 
+        public Ticket()
+        {
+
+        }
+
         public Ticket(SocialEvent socialEvent)
         {
             this.socialEvent = socialEvent;

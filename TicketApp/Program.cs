@@ -30,11 +30,15 @@ namespace TicketApp
             MyDbContext context = new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TestDatabase2;Integrated Security=True;Pooling=False");
             UnitOfWork unitOfWork = new UnitOfWork(context);
             AdapterGenericRepository agr = new AdapterGenericRepository(unitOfWork);
-            IEnumerable<Customer> customers = agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository);
-            List<Customer> cus2 = customers.ToList();
-            foreach(Customer c in cus2)
+            List<Customer> customers = agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository).ToList();
+            foreach(Customer c in customers)
             {
                 Console.WriteLine(c);
+            }
+            List<Organizer> organizers = agr.GetAll(agr.UnitOfWorkRepository.OrganizerRepository).ToList();
+            foreach(Organizer o in organizers)
+            {
+                Console.WriteLine(o);
             }
 
 
