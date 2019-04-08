@@ -15,11 +15,6 @@ namespace Library.PersistenceAdapter
             UnitOfWorkRepository = unitOfWorkRepository;
         }
 
-        public void GetT(IRepository<T> repo, T entity)
-        {
-            repo.Add(entity);
-        }
-
         public void Add(IRepository<T> repository, T entity)
         {
             repository.Add(entity);
@@ -29,20 +24,19 @@ namespace Library.PersistenceAdapter
         {
             repository.Remove(entity);
         }
-
         public void Dispose()
         {
             UnitOfWorkRepository.Dispose();
         }
 
-        public void Save()
-        {
-            UnitOfWorkRepository.Commit();
-        }
-
         public void Undo()
         {
             UnitOfWorkRepository.RejectChanges();
+        }
+
+        public void Save()
+        {
+            UnitOfWorkRepository.Commit();
         }
     }
 }
