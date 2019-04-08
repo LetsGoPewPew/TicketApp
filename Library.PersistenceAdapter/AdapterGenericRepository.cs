@@ -25,12 +25,12 @@ namespace Library.PersistenceAdapter
         {
         }
 
-        public void Save(T a )
+        public void Save()
         {
             throw new NotImplementedException();
         }
 
-        public void Undo(T a)
+        public void Undo()
         {
             throw new NotImplementedException();
         }
