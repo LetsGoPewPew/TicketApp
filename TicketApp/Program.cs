@@ -5,6 +5,7 @@ using Library.Persistency;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TicketApp
@@ -31,7 +32,8 @@ namespace TicketApp
             UnitOfWork unitOfWork = new UnitOfWork(context);
             AdapterGenericRepository agr = new AdapterGenericRepository(unitOfWork);
             IEnumerable<Customer> customers = agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository);
-            foreach(Customer c in customers)
+            List<Customer> cus2 = customers.ToList();
+            foreach(Customer c in cus2)
             {
                 Console.WriteLine(c);
             }
