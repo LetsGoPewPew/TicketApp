@@ -1,9 +1,9 @@
 ﻿namespace Library.PersistenceAdapter
 {
-    public interface ITargetPersistenceAdapter
+    public interface ITargetPersistenceAdapter<T> where T : class
     {
-        void Add();
-        void Remove();
+        void Add(T entity);
+        void Remove(T entity);
 
         void Delete();
         void Undo();
