@@ -3,7 +3,7 @@ using System;
 
 namespace Library.PersistenceAdapter
 {
-    public class AdapterGenericRepository<T> : ITargetPersistenceAdapter where T : class
+    public class AdapterGenericRepository<T> : ITargetPersistenceAdapter<T> where T : class
     {
         public UnitOfWork UnitOfWorkRepository { get; set; }
 
@@ -14,6 +14,7 @@ namespace Library.PersistenceAdapter
 
         public void Add(T entity)
         {
+
         }
 
         public void Remove(T a)
