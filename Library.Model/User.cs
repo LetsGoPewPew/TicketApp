@@ -25,6 +25,11 @@ namespace Library.Model
         private string password;
         public string Password { get => password; set => password = value; }
 
+        public User()
+        {
+
+        }
+
         protected User(string name, string email, string password)
         {
             this.Id = NumbersOfUsersCreated++;
