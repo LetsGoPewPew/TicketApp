@@ -32,7 +32,8 @@ namespace Library.Model
 
         public SocialEvent()
         {
-
+            Id = numberOfSocialEventsCreated++;
+            socialEventList.Add(this);
         }
 
         public SocialEvent(int maxTickets, int pricePerTicket, string category = "", string name = "")

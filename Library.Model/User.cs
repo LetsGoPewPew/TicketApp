@@ -27,7 +27,9 @@ namespace Library.Model
 
         public User()
         {
+            this.Id = NumbersOfUsersCreated++;
 
+            User.UserList.Add(this);
         }
 
         protected User(string name, string email, string password)

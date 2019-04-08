@@ -28,7 +28,8 @@ namespace Library.Model
 
         public Ticket()
         {
-
+            id = numberOfTicketsCreated++;
+            socialEvent.TicketsForThisSocialEvent.Add(this);
         }
 
         public Ticket(SocialEvent socialEvent)

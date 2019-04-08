@@ -9,9 +9,11 @@ namespace Library.Model
         private static List<Organizer> organizerList = new List<Organizer>();
         public static List<Organizer> OrganizerList { get => organizerList; set => organizerList = value; }
 
-        public Organizer()
+        public Organizer() : base()
         {
+            NumberOfOrganizersCreated++;
 
+            Organizer.OrganizerList.Add(this);
         }
 
         public Organizer(string name, string email, string password) : base(name, email, password)

@@ -10,9 +10,11 @@ namespace Library.Model
         private static List<Customer> customerList = new List<Customer>();
         public static List<Customer> CustomerList { get => customerList; set => customerList = value; }
 
-        public Customer()
+        public Customer() : base ()
         {
+            NumberOfCustomersCreated++;
 
+            Customer.CustomerList.Add(this);
         }
 
         public Customer(string name, string email, string password) : base(name, email, password)
