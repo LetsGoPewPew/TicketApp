@@ -13,11 +13,12 @@ namespace Library.Model
         private readonly string paymentMethod;
         private Ticket ticket;
 
-        public Receipt(int numberOfTickets, Ticket ticket, string currencyTypeSuffix)
+        public Receipt(int numberOfTickets, Ticket ticket, string currencyTypeSuffix, string paymentMethod)
         {
             this.ticket = ticket;
             this.numberOfTickets = numberOfTickets;
             this.currencyTypeSuffix = currencyTypeSuffix;
+            this.paymentMethod = paymentMethod;
         }
 
         public string GenerateReceipt()
@@ -28,6 +29,7 @@ namespace Library.Model
             stringbuilder.AppendLine("Number of tickets: " + numberOfTickets);
             stringbuilder.AppendLine("Price per ticket: " + pricePerTicket + "kr");
             stringbuilder.AppendLine("Price total: " + (pricePerTicket * numberOfTickets) + currencyTypeSuffix);
+            stringbuilder.AppendLine("Paid using: " + paymentMethod);
             return stringbuilder.ToString();
         }
 

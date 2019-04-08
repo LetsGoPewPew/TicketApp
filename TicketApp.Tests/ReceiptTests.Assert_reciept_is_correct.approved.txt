@@ -2,3 +2,4 @@
 Number of tickets: 4
 Price per ticket: 100kr
 Price total: 400kr
+Paid using: Vipps

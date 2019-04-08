@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Library.Model;
 using ApprovalTests;
 using ApprovalTests.Reporters;
+using Library.Payment;
 
 namespace TicketApp.Tests
 {
@@ -15,11 +16,12 @@ namespace TicketApp.Tests
     class ReceiptTests
     {
         [Test]
-        public void Assert_reciept_is_correct()
+        public void Assert_receipt_is_correct()
         {
             SocialEvent socialEvent = new SocialEvent(10, 100, "TestCategory", "TestName");
             Ticket ticket = new Ticket(socialEvent);
-            Receipt receipt = new Receipt(4, ticket, "kr");
+            Vipps vipps = new Vipps();
+            Receipt receipt = new Receipt(4, ticket, "kr", vipps.ToString());
             string result = receipt.GenerateReceipt();
 
             Approvals.Verify(result);
