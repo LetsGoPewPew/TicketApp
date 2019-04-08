@@ -18,7 +18,7 @@ namespace TicketApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             // https://stackoverflow.com/questions/21563940/how-to-connect-to-localdb-in-visual-studio-server-explorer
-            MyDbContext context = new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True");
+            MyDbContext context = new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=tempdb;Integrated Security=True");
             UnitOfWork unitOfWork = new UnitOfWork(context);
             /*
             var customers = unitOfWork.CustomerRepository.Entities
