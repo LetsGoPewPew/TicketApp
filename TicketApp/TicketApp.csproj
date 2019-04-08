@@ -140,6 +140,10 @@
       <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
       <Name>Library.Payment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library.PersistenceAdapter\Library.PersistenceAdapter.csproj">
+      <Project>{9FBD0336-3614-4598-813D-A1534489A67D}</Project>
+      <Name>Library.PersistenceAdapter</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
       <Project>{BDA1C974-AD2C-445F-941C-6F2E5B343C30}</Project>
       <Name>Library.Persistency</Name>
