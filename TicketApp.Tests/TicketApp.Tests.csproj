@@ -41,6 +41,12 @@
     <Reference Include="ApprovalUtilities, Version=3.0.0.0, Culture=neutral, PublicKeyToken=11bd7d124fc62e0f, processorArchitecture=MSIL">
       <HintPath>..\packages\ApprovalUtilities.3.0.22\lib\net461\ApprovalUtilities.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Win32.Registry, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Registry.4.5.0\lib\net461\Microsoft.Win32.Registry.dll</HintPath>
     </Reference>
@@ -48,6 +54,7 @@
       <HintPath>..\packages\NUnit.3.11.0\lib\net45\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlClient, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Data.SqlClient.4.5.1\lib\net461\System.Data.SqlClient.dll</HintPath>
@@ -76,6 +83,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
+    <Compile Include="GenericRepositoryTests.cs" />
     <Compile Include="DatabaseContextCreatorTests.cs" />
     <Compile Include="PaymentLogicTests.cs" />
     <Compile Include="ReceiptTests.cs" />
@@ -87,6 +95,7 @@
     <Compile Include="UserTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -105,6 +114,10 @@
     <ProjectReference Include="..\Library.Payment\Library.Payment.csproj">
       <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
       <Name>Library.Payment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
+      <Project>{BDA1C974-AD2C-445F-941C-6F2E5B343C30}</Project>
+      <Name>Library.Persistency</Name>
     </ProjectReference>
     <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
       <Project>{bda1c974-ad2c-445f-941c-6f2e5b343c30}</Project>
