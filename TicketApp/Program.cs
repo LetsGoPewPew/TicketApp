@@ -30,18 +30,10 @@ namespace TicketApp
             MyDbContext context = DatabaseContextCreator.CreateDatabaseContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
             AdapterGenericRepository agr = new AdapterGenericRepository(unitOfWork);
-            List<Customer> customers = agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository).ToList();
-
-            foreach(Customer c in customers)
-            {
-                Console.WriteLine(c);
-            }
-            List<Organizer> organizers = agr.GetAll(agr.UnitOfWorkRepository.OrganizerRepository).ToList();
-            foreach(Organizer o in organizers)
-            {
-                Console.WriteLine(o);
-            }
-
+            agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository).ToList();
+            agr.GetAll(agr.UnitOfWorkRepository.OrganizerRepository).ToList();
+            agr.GetAll(agr.UnitOfWorkRepository.SocialEventRepository).ToList();
+            agr.GetAll(agr.UnitOfWorkRepository.TicketRepository).ToList();
 
             Application.Run(new LoginForm());
         }
