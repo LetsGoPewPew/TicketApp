@@ -2,6 +2,8 @@
 using Library.Model;
 using NUnit.Framework;
 using Library.DataAccess;
+using System.Linq;
+using System.Transactions;
 
 namespace TicketApp.Tests
 {
@@ -9,21 +11,41 @@ namespace TicketApp.Tests
     class GenericRepositoryTests
     {
         private GenericRepository<Customer> Customers;
+        private Customer customer;
+        MyDbContext context;
+
         [SetUp]
         public void SetupBeforeEachTest()
         {
-            Customers = new GenericRepository<Customer>(new MyDbContext("a"));
+            context = DatabaseContextCreator.CreateTestDatabaseContext();
+            Customers = new GenericRepository<Customer>(context);
+            customer = new Customer("Ole", "ole@gmail.com", "rallysjåfør");
         }
 
         [Test]
-        public void Assert_add_and_remove_to_generic_repository()
+        public void Assert_add_to_generic_repository()
         {
-            Customer testCustomer = new Customer("1", "1", "1");
-            Customers.Add(testCustomer);
-            Assert.IsNotNull(Customers);
+            using(TransactionScope scope = new TransactionScope())
+            {
+                Customers.Add(customer);
+                context.SaveChanges();
 
-            Customers.Remove(testCustomer);
-            Assert.NotNull(Customers)
+                Assert.IsNotEmpty(Customers.Entities.ToList());
+            }
+        }
+
+        [Test]
+        public void Assert_remove_to_generic_repository()
+        {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                Customers.Add(customer);
+                context.SaveChanges();
+
+                Customers.Remove(customer);
+                context.SaveChanges();
+                Assert.IsEmpty(Customers.Entities.ToList());
+            }
         }
     }
 }

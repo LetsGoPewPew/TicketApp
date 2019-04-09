@@ -15,7 +15,7 @@ namespace Library.DataAccess
 
         public static MyDbContext CreateTestDatabaseContext()
         {
-            return new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FakeDatabase;Integrated Security=True;Pooling=False");
+            return new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FakeDatabase;Integrated Security=True;Pooling=False", false);
         }
     }
 }

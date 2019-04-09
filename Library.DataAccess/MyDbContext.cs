@@ -15,12 +15,13 @@ namespace Library.DataAccess
         public virtual DbSet<SocialEvent> SocialEvents { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
 
-        public MyDbContext(string connectionString) : base (connectionString)
+        public MyDbContext(string connectionString, bool seedDatabase = true) : base (connectionString)
         {
             Configuration.ProxyCreationEnabled = false;
 
             Database.Connection.ConnectionString = connectionString;
-            Database.SetInitializer(new LibraryDBInitializer());
+            if(seedDatabase)
+                Database.SetInitializer(new LibraryDBInitializer());
         }
     }
 }
