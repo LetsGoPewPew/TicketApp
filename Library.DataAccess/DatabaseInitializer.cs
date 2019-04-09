@@ -4,7 +4,7 @@ using System.Data.Entity;
 
 namespace Library.DataAccess
 {
-    public class LibraryDBInitializer : DropCreateDatabaseIfModelChanges<MyDbContext>
+    public class DatabaseInitializer : DropCreateDatabaseIfModelChanges<MyDbContext>
     {
         protected override void Seed(MyDbContext context)
         {

@@ -21,7 +21,9 @@ namespace Library.DataAccess
 
             Database.Connection.ConnectionString = connectionString;
             if(seedDatabase)
-                Database.SetInitializer(new LibraryDBInitializer());
+            {
+                Database.SetInitializer(new DatabaseInitializer());
+            }
         }
     }
 }

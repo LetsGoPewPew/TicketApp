@@ -21,6 +21,7 @@ namespace TicketApp.Tests
         {
             context = DatabaseContextCreator.CreateTestDatabaseContext();
             customers = new GenericRepository<Customer>(context);
+            context.Database.CreateIfNotExists();
         }
 
         [OneTimeTearDown]

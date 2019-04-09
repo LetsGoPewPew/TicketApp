@@ -14,10 +14,23 @@ namespace TicketApp.Tests
     [TestFixture]
     class UnitOfWorkTests
     {
+
+        private MyDbContext context;
+        private UnitOfWork unitOfWork;
+        private TransactionScope scope;
+
         [OneTimeTearDown]
         public void OneTimeTearDown()
         {
             unitOfWork.Dispose();
+        }
+
+        [OneTimeSetUp]
+        public void OneTimeSetup()
+        {
+            context = DatabaseContextCreator.CreateTestDatabaseContext();
+            unitOfWork = new UnitOfWork(context);
+            context.Database.CreateIfNotExists();
         }
 
         [SetUp]
@@ -31,10 +44,6 @@ namespace TicketApp.Tests
         {
             scope.Dispose();
         }
-
-        static MyDbContext context = DatabaseContextCreator.CreateTestDatabaseContext();
-        static UnitOfWork unitOfWork = new UnitOfWork(context);
-        private static TransactionScope scope = new TransactionScope();
 
         [Test]
         public void Assert_that_customer_exists_after_adding()

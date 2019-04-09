@@ -10,12 +10,12 @@ namespace Library.DataAccess
     {
         public static MyDbContext CreateDatabaseContext()
         {
-            return new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TestDatabase2;Integrated Security=True;Pooling=False");
+            return new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Database;Integrated Security=True;Pooling=False");
         }
 
         public static MyDbContext CreateTestDatabaseContext()
         {
-            return new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=FakeDatabase;Integrated Security=True;Pooling=False", false);
+            return new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TestDatabase;Integrated Security=True;Pooling=False", false);
         }
     }
 }
