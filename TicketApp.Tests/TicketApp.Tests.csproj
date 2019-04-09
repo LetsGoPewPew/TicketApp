@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
     <Compile Include="GenericRepositoryTests.cs" />
+    <Compile Include="DatabaseControllerTests.cs" />
     <Compile Include="PaymentLogicTests.cs" />
     <Compile Include="PersistencyTests.cs" />
     <Compile Include="ReceiptTests.cs" />

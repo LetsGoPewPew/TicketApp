@@ -27,10 +27,11 @@ namespace TicketApp
             UnitOfWork unitOfWork = new UnitOfWork(context);
             */
 
-            MyDbContext context = new MyDbContext(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=TestDatabase2;Integrated Security=True;Pooling=False");
+            MyDbContext context = DatabaseController.CreateDatabaseContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
             AdapterGenericRepository agr = new AdapterGenericRepository(unitOfWork);
             List<Customer> customers = agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository).ToList();
+
             foreach(Customer c in customers)
             {
                 Console.WriteLine(c);
