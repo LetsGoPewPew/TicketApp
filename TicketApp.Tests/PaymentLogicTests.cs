@@ -16,7 +16,7 @@ namespace TicketApp.Tests
         private Vipps vipps;
 
         [SetUp]
-        public void SetupBeforeEachTest()
+        public void SetUp()
         {
             creditCard = new CreditCard();
             vipps = new Vipps();

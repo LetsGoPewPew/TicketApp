@@ -14,7 +14,7 @@ namespace TicketApp.Tests
     {
         private Customer customer1;
         [SetUp]
-        public void SetupBeforeEachTest()
+        public void SetUp()
         {
             customer1 = new Customer("name1", "email1", "password1");
         }

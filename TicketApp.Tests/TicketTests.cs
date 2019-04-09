@@ -19,7 +19,7 @@ namespace TicketApp.Tests
         private SocialEvent socialEvent2;
 
         [SetUp]
-        public void SetupBeforeEachTest()
+        public void SetUp()
         {
             socialEvent1 = new SocialEvent(10, 100);
             socialEvent2 = new SocialEvent(10, 100);

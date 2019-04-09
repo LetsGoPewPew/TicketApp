@@ -15,21 +15,17 @@ namespace TicketApp.Tests
         [Test]
         public void CreateDataContext_ReturnsDataContextObject()
         {
-            using(TransactionScope scope = new TransactionScope())
-            {
-                MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
-                Assert.IsNotNull(result);
-            }
+            MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
+            Assert.IsNotNull(result);
+            result.Dispose();
         }
 
         [Test]
         public void CreateTestDataContext_ReturnsDataContextObject()
         {
-            using (TransactionScope scope = new TransactionScope())
-            {
-                MyDbContext result = DatabaseContextCreator.CreateTestDatabaseContext();
-                Assert.IsNotNull(result);
-            }
+            MyDbContext result = DatabaseContextCreator.CreateTestDatabaseContext();
+            Assert.IsNotNull(result);
+            result.Dispose();
         }
     }
 }

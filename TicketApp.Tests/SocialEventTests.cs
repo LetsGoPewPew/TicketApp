@@ -16,7 +16,7 @@ namespace TicketApp.Tests
         private int numberOfTickets;
 
         [SetUp]
-        public void SetupBeforeEachTest()
+        public void SetUp()
         {
             numberOfTickets = 10;
             socialEvent = new SocialEvent(numberOfTickets, 1);

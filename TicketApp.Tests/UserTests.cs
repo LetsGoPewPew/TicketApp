@@ -11,7 +11,7 @@ namespace TicketApp.Tests
         private Organizer organizer;
 
         [SetUp]
-        public void SetupBeforeEachTest()
+        public void SetUp()
         {
             customer = new Customer("ole", "ole@ole.com", "passord");
             organizer = new Organizer("ole", "asdasd@ole.com", "asdsd");

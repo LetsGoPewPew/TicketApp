@@ -15,26 +15,39 @@ namespace TicketApp.Tests
     class UnitOfWorkTests
     {
         [OneTimeTearDown]
-        public void CleanUp()
+        public void OneTimeTearDown()
         {
             unitOfWork.Dispose();
         }
+
+        [SetUp]
+        public void SetUp()
+        {
+            scope = new TransactionScope();
+        }
+
+        [TearDown]
+        public void TearDown()
+        {
+            scope.Dispose();
+        }
+
         static MyDbContext context = DatabaseContextCreator.CreateTestDatabaseContext();
         static UnitOfWork unitOfWork = new UnitOfWork(context);
+        private static TransactionScope scope = new TransactionScope();
 
         [Test]
         public void Assert_that_customer_exists_after_adding()
         {
-            using (TransactionScope scope = new TransactionScope())
-            { 
-                Customer customer = new Customer("name1", "email1", "password1");
+            Customer customer = new Customer("name1", "email1", "password1");
 
-                unitOfWork.CustomerRepository.Add(customer);
+            unitOfWork.CustomerRepository.Add(customer);
 
-                unitOfWork.Commit();
+            unitOfWork.Commit();
 
-                Customer result = unitOfWork.CustomerRepository.Entities.First<Customer>();
-            }
+            List<Customer> result = unitOfWork.CustomerRepository.Entities.ToList<Customer>();
+
+            Assert.IsNotEmpty(result);
         }
     }
 }
