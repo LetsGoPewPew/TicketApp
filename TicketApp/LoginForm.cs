@@ -1,14 +1,21 @@
 ﻿using Library.Logic;
 using Library.Model;
+using Library.PersistenceAdapter;
 using System;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace TicketApp
 {
     public partial class LoginForm : Form
     {
-        public LoginForm()
+        ITargetPersistenceAdapter persistenceAdapter;
+        public LoginForm(ITargetPersistenceAdapter persistenceAdapter)
         {
+            this.persistenceAdapter = persistenceAdapter;
+            Customer.CustomerList = this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().CustomerRepository).ToList();
+            Organizer.OrganizerList = this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().OrganizerRepository).ToList();
+
             InitializeComponent();
         }
 
@@ -32,28 +39,25 @@ namespace TicketApp
             }
         }
 
-        private void ButtonNoLoggin_Click(object sender, EventArgs e)
+        private void ButtonNoLogin_Click(object sender, EventArgs e)
         {
             GoTosocialEventListForm(null);
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
-            if (CheckInputFields() == true)
+            RegisterForm registerForm = new RegisterForm(persistenceAdapter)
             {
-                if (UserLogic.EmailInUse(TextEmail.Text) == true)
-                {
-                    MessageBox.Show("Email already in use sir");
-                    return;
-                }
-                User.UserList.Add(new Customer("", TextEmail.Text, TextPassword.Text));
-                MessageBox.Show("Successfully registered ! :D");
-            }
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            registerForm.Show();
+            this.Hide();
         }
 
         private void GoTosocialEventListForm(User currentUser)
         {
-            SocialEventListForm socialEventListForm = new SocialEventListForm(currentUser)
+            SocialEventListForm socialEventListForm = new SocialEventListForm(persistenceAdapter, currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location

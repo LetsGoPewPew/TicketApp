@@ -1,31 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using Library.Model;
+using Library.PersistenceAdapter;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Library.Model;
 
 namespace TicketApp
 {
     public partial class SocialEventListForm : Form
     {
-        User CurrentUser = null;
-        public SocialEventListForm(User user)
+        private ITargetPersistenceAdapter persistenceAdapter;
+        private User currentUser = null;
+        public SocialEventListForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
         {
-            CurrentUser = user;
+            this.persistenceAdapter = persistenceAdapter;
+            this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().SocialEventRepository).ToList();
+            this.currentUser = currentUser;
+
             InitializeComponent();
             listBoxSocialEvents.DataSource = SocialEvent.SocialEventList;
 
-            if(user == null)
+            if(this.currentUser == null)
                 this.Text = "Guest login";
             else
             {
-                this.Text = $"Logged in as: {user.Name}";
-                if(user.GetType() == typeof(Organizer))
+                this.Text = $"Logged in as: {this.currentUser.Name}";
+                if(this.currentUser.GetType() == typeof(Organizer))
                 {
                     ButtonCreateSocialEvent.Visible = true;
                     this.Text += " (Organizer)";
@@ -35,7 +34,7 @@ namespace TicketApp
                     this.Text += " (Customer)";
                 }
 
-                if(user.GetType() == typeof(Customer))
+                if(this.currentUser.GetType() == typeof(Customer))
                 {
                     ButtonVerify.Visible = true;
                 }
@@ -44,7 +43,7 @@ namespace TicketApp
 
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {
-            BuyTicketForm buyTicket = new BuyTicketForm((SocialEvent)listBoxSocialEvents.SelectedItem)
+            BuyTicketForm buyTicket = new BuyTicketForm(persistenceAdapter, (SocialEvent)listBoxSocialEvents.SelectedItem)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -54,7 +53,7 @@ namespace TicketApp
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm()
+            LoginForm loginForm = new LoginForm(persistenceAdapter)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -65,7 +64,7 @@ namespace TicketApp
 
         private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
         {
-            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(CurrentUser)
+            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -75,7 +74,7 @@ namespace TicketApp
 
         private void ButtonVerify_Click(object sender, EventArgs e)
         {
-            VerifyForm verifyForm = new VerifyForm(CurrentUser)
+            VerifyForm verifyForm = new VerifyForm(persistenceAdapter, currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
