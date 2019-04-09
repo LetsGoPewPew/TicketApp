@@ -16,6 +16,7 @@ namespace TicketApp.Tests
         {
             MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
             Assert.IsNotNull(result);
+            result.Dispose();
         }
 
         [Test]
@@ -23,6 +24,7 @@ namespace TicketApp.Tests
         {
             MyDbContext result = DatabaseContextCreator.CreateTestDatabaseContext();
             Assert.IsNotNull(result);
+            result.Dispose();
         }
     }
 }

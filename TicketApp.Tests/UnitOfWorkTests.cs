@@ -14,14 +14,13 @@ namespace TicketApp.Tests
     [TestFixture]
     class UnitOfWorkTests
     {
+        [OneTimeTearDown]
+        public void CleanUp()
+        {
+            unitOfWork.Dispose();
+        }
         static MyDbContext context = DatabaseContextCreator.CreateTestDatabaseContext();
         static UnitOfWork unitOfWork = new UnitOfWork(context);
-
-        [SetUp]
-        public void Setup()
-        {
-
-        }
 
         [Test]
         public void Assert_that_customer_exists_after_adding()
