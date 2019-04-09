@@ -13,7 +13,7 @@ namespace TicketApp
         public SocialEventListForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
         {
             this.persistenceAdapter = persistenceAdapter;
-            this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().SocialEventRepository).ToList();
+            SocialEvent.SocialEventList = this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().SocialEventRepository).ToList();
             this.currentUser = currentUser;
 
             InitializeComponent();
@@ -64,7 +64,7 @@ namespace TicketApp
 
         private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
         {
-            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(currentUser)
+            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(persistenceAdapter, currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location

@@ -1,22 +1,18 @@
 ﻿using Library.Model;
+using Library.PersistenceAdapter;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicketApp
 {
     public partial class CreateSocialEventForm : Form
     {
-        User CurrentUser = null;
-        public CreateSocialEventForm(User currentUser)
+        private ITargetPersistenceAdapter persistenceAdapter;
+        private User currentUser = null;
+        public CreateSocialEventForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
         {
-            CurrentUser = currentUser;
+            this.persistenceAdapter = persistenceAdapter;
+            this.currentUser = currentUser;
 
             InitializeComponent();
         }
@@ -25,7 +21,9 @@ namespace TicketApp
         {
             if (AllFieldsFilledOut())
             {
-                new SocialEvent((int)NumericUpDownTotalTickets.Value, (int)NumericUpDownTicketPrice.Value, TextBoxCategory.Text, TextBoxSocialEventName.Text);
+                SocialEvent newSocialEvent = new SocialEvent((int)NumericUpDownTotalTickets.Value,
+                                                            (int)NumericUpDownTicketPrice.Value, TextBoxCategory.Text, TextBoxSocialEventName.Text);
+                persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().SocialEventRepository, newSocialEvent);
                 MessageBox.Show($"SocialEvent: {TextBoxSocialEventName.Text} created");
             }
             else
