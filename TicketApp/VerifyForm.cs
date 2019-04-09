@@ -1,25 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Library.Logic;
+using Library.Model;
+using Library.PersistenceAdapter;
+using Library.Verification;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Library.Logic;
-using Library.Model;
-using Library.Verification;
 
 namespace TicketApp
 {
     public partial class VerifyForm : Form
     {
-        User CurrentUser = null;
-        public VerifyForm(User currentUser)
+        private ITargetPersistenceAdapter persistenceAdapter;
+        private User currentUser = null;
+        public VerifyForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
         {
-            CurrentUser = currentUser;
+            this.persistenceAdapter = persistenceAdapter;
+            this.currentUser = currentUser;
 
             InitializeComponent();
             InitializeInfo();
@@ -45,12 +43,12 @@ namespace TicketApp
 
             if(result == true)
             {
-                if(CurrentUser.GetType() == typeof(Customer))
+                if(currentUser.GetType() == typeof(Customer))
                 {
-                    UserLogic.UpgradeCustomer((Customer)CurrentUser);
+                    UserLogic.UpgradeCustomer((Customer)currentUser);
                     MessageBox.Show("Verification Success!");
 
-                    LoginForm loginForm = new LoginForm()
+                    LoginForm loginForm = new LoginForm(persistenceAdapter)
                     {
                         StartPosition = FormStartPosition.Manual,
                         Location = this.Location
@@ -62,7 +60,7 @@ namespace TicketApp
             else
             {
                 MessageBox.Show("Verification Failed.");
-                SocialEventListForm socialEventListForm = new SocialEventListForm(CurrentUser)
+                SocialEventListForm socialEventListForm = new SocialEventListForm(persistenceAdapter, currentUser)
                 {
                     StartPosition = FormStartPosition.Manual,
                     Location = this.Location

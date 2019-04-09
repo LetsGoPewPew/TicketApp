@@ -37,9 +37,6 @@ namespace TicketApp.Tests
         {
             using (TransactionScope scope = new TransactionScope())
             {
-                Customers.Add(customer);
-                context.SaveChanges();
-
                 Customers.Remove(customer);
                 context.SaveChanges();
                 Assert.IsEmpty(Customers.Entities.ToList());

@@ -1,9 +1,8 @@
-﻿using Library.Logic;
-using Library.Model;
+﻿using Library.Model;
 using Library.Payment;
+using Library.PersistenceAdapter;
 using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Windows.Forms;
@@ -13,9 +12,12 @@ namespace TicketApp
     public partial class BuyTicketForm : Form
     {
         private SocialEvent socialEvent;
-        public BuyTicketForm(SocialEvent socialEvent)
+        private ITargetPersistenceAdapter persistenceAdapter;
+        public BuyTicketForm(ITargetPersistenceAdapter persistenceAdapter, SocialEvent socialEvent)
         {
             InitializeComponent();
+            this.persistenceAdapter = persistenceAdapter;
+            this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().TicketRepository).ToList();
             this.socialEvent = socialEvent;
 
             InitializeInfo();

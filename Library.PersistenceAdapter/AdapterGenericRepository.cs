@@ -1,6 +1,4 @@
-﻿using Library.Model;
-using Library.Persistency;
-using System;
+﻿using Library.Persistency;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,6 +25,11 @@ namespace Library.PersistenceAdapter
         public IEnumerable<T> GetAll<T>(IRepository<T> repository) where T : class
         {
             return repository.Entities.AsEnumerable();
+        }
+
+        public UnitOfWork GetUnitOfWork()
+        {
+            return UnitOfWorkRepository;
         }
 
         public void Dispose()
