@@ -29,7 +29,7 @@ namespace Library.Model
             stringbuilder.AppendLine("Number of tickets: " + numberOfTickets);
             stringbuilder.AppendLine("Price per ticket: " + pricePerTicket + "kr");
             stringbuilder.AppendLine("Price total: " + (pricePerTicket * numberOfTickets) + currencyTypeSuffix);
-            stringbuilder.AppendLine("Paid using: " + paymentMethod);
+            stringbuilder.Append("Paid using: " + paymentMethod);
             return stringbuilder.ToString();
         }
 
