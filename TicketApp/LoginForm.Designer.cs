@@ -65,7 +65,7 @@
             this.ButtonNoLoggin.TabIndex = 2;
             this.ButtonNoLoggin.Text = "Continue without logging in";
             this.ButtonNoLoggin.UseVisualStyleBackColor = true;
-            this.ButtonNoLoggin.Click += new System.EventHandler(this.ButtonNoLoggin_Click);
+            this.ButtonNoLoggin.Click += new System.EventHandler(this.ButtonNoLogin_Click);
             // 
             // TextEmail
             // 

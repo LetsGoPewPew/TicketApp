@@ -39,25 +39,20 @@ namespace TicketApp
             }
         }
 
-        private void ButtonNoLoggin_Click(object sender, EventArgs e)
+        private void ButtonNoLogin_Click(object sender, EventArgs e)
         {
             GoTosocialEventListForm(null);
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
-            if (CheckInputFields() == true)
+            RegisterForm registerForm = new RegisterForm(persistenceAdapter)
             {
-                if (UserLogic.EmailInUse(TextEmail.Text) == true)
-                {
-                    MessageBox.Show("Email already in use sir");
-                    return;
-                }
-                Customer newCustomer = new Customer("", TextEmail.Text, TextPassword.Text);
-                User.UserList.Add(newCustomer);
-                persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().CustomerRepository, newCustomer);
-                MessageBox.Show("Successfully registered ! :D");
-            }
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            registerForm.Show();
+            this.Hide();
         }
 
         private void GoTosocialEventListForm(User currentUser)
