@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
+    <Compile Include="DatabaseControllerTests.cs" />
     <Compile Include="PaymentLogicTests.cs" />
     <Compile Include="PersistencyTests.cs" />
     <Compile Include="ReceiptTests.cs" />
@@ -88,6 +89,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.DataAccess\Library.DataAccess.csproj">
+      <Project>{7C0867F3-F5B4-4976-BA2D-484CDD3F7F8D}</Project>
+      <Name>Library.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Logic\Library.Logic.csproj">
       <Project>{17B8366C-527A-40D2-8269-09B85B41A748}</Project>
       <Name>Library.Logic</Name>

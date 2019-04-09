@@ -27,7 +27,7 @@ namespace TicketApp
             UnitOfWork unitOfWork = new UnitOfWork(context);
             */
 
-            MyDbContext context = DatabaseController.CreateDataBaseContext();
+            MyDbContext context = DatabaseController.CreateDatabaseContext();
             UnitOfWork unitOfWork = new UnitOfWork(context);
             AdapterGenericRepository agr = new AdapterGenericRepository(unitOfWork);
             List<Customer> customers = agr.GetAll(agr.UnitOfWorkRepository.CustomerRepository).ToList();
