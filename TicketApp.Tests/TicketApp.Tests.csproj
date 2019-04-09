@@ -63,6 +63,7 @@
     <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -75,13 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
-    <Compile Include="DatabaseControllerTests.cs" />
+    <Compile Include="DatabaseContextCreatorTests.cs" />
     <Compile Include="PaymentLogicTests.cs" />
-    <Compile Include="PersistencyTests.cs" />
     <Compile Include="ReceiptTests.cs" />
     <Compile Include="SocialEventTests.cs" />
     <Compile Include="TicketTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitOfWorkTests.cs" />
     <Compile Include="UserLogicTests.cs" />
     <Compile Include="UserTests.cs" />
   </ItemGroup>
@@ -104,6 +105,10 @@
     <ProjectReference Include="..\Library.Payment\Library.Payment.csproj">
       <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
       <Name>Library.Payment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
+      <Project>{bda1c974-ad2c-445f-941c-6f2e5b343c30}</Project>
+      <Name>Library.Persistency</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

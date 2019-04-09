@@ -9,12 +9,19 @@ using System.Threading.Tasks;
 namespace TicketApp.Tests
 {
     [TestFixture]
-    class DatabaseControllerTests
+    class DatabaseContextCreatorTests
     {
         [Test]
         public void CreateDataContext_ReturnsDataContextObject()
         {
             MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
+            Assert.IsNotNull(result);
+        }
+
+        [Test]
+        public void CreateTestDataContext_ReturnsDataContextObject()
+        {
+            MyDbContext result = DatabaseContextCreator.CreateTestDatabaseContext();
             Assert.IsNotNull(result);
         }
     }
