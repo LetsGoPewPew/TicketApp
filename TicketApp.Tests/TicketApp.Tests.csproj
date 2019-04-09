@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomerTests.cs" />
+    <Compile Include="GenericRepositoryTests.cs" />
     <Compile Include="PaymentLogicTests.cs" />
     <Compile Include="PersistencyTests.cs" />
     <Compile Include="ReceiptTests.cs" />
@@ -88,6 +89,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Library.DataAccess\Library.DataAccess.csproj">
+      <Project>{7C0867F3-F5B4-4976-BA2D-484CDD3F7F8D}</Project>
+      <Name>Library.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Library.Logic\Library.Logic.csproj">
       <Project>{17B8366C-527A-40D2-8269-09B85B41A748}</Project>
       <Name>Library.Logic</Name>
@@ -99,6 +104,10 @@
     <ProjectReference Include="..\Library.Payment\Library.Payment.csproj">
       <Project>{3520F4D3-F24F-470B-B380-D7F2AFC4C7D5}</Project>
       <Name>Library.Payment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Library.Persistency\Library.Persistency.csproj">
+      <Project>{BDA1C974-AD2C-445F-941C-6F2E5B343C30}</Project>
+      <Name>Library.Persistency</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
