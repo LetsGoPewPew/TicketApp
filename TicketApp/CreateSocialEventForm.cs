@@ -24,6 +24,7 @@ namespace TicketApp
                 SocialEvent newSocialEvent = new SocialEvent((int)NumericUpDownTotalTickets.Value,
                                                             (int)NumericUpDownTicketPrice.Value, TextBoxCategory.Text, TextBoxSocialEventName.Text);
                 persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().SocialEventRepository, newSocialEvent);
+                persistenceAdapter.GetUnitOfWork().Commit();
                 MessageBox.Show($"SocialEvent: {TextBoxSocialEventName.Text} created");
             }
             else
