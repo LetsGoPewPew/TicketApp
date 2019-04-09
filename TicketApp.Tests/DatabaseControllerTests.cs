@@ -14,7 +14,7 @@ namespace TicketApp.Tests
         [Test]
         public void CreateDataContext_ReturnsDataContextObject()
         {
-            MyDbContext result = DatabaseController.CreateDatabaseContext();
+            MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
             Assert.IsNotNull(result);
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.DataAccess
 {
-    public class DatabaseController
+    public class DatabaseContextCreator
     {
         public static MyDbContext CreateDatabaseContext()
         {
