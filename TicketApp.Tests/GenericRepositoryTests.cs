@@ -10,15 +10,13 @@ namespace TicketApp.Tests
     [TestFixture]
     class GenericRepositoryTests
     {
-        private GenericRepository<Customer> Customers;
+        private static MyDbContext context = DatabaseContextCreator.CreateTestDatabaseContext();
+        private static GenericRepository<Customer> Customers = new GenericRepository<Customer>(context);
         private Customer customer;
-        MyDbContext context;
 
         [SetUp]
         public void SetupBeforeEachTest()
         {
-            context = DatabaseContextCreator.CreateTestDatabaseContext();
-            Customers = new GenericRepository<Customer>(context);
             customer = new Customer("Ole", "ole@gmail.com", "rallysjåfør");
         }
 
