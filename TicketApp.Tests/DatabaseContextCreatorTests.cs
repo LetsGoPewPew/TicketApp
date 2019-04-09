@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace TicketApp.Tests
 {
@@ -14,15 +15,21 @@ namespace TicketApp.Tests
         [Test]
         public void CreateDataContext_ReturnsDataContextObject()
         {
-            MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
-            Assert.IsNotNull(result);
+            using(TransactionScope scope = new TransactionScope())
+            {
+                MyDbContext result = DatabaseContextCreator.CreateDatabaseContext();
+                Assert.IsNotNull(result);
+            }
         }
 
         [Test]
         public void CreateTestDataContext_ReturnsDataContextObject()
         {
-            MyDbContext result = DatabaseContextCreator.CreateTestDatabaseContext();
-            Assert.IsNotNull(result);
+            using (TransactionScope scope = new TransactionScope())
+            {
+                MyDbContext result = DatabaseContextCreator.CreateTestDatabaseContext();
+                Assert.IsNotNull(result);
+            }
         }
     }
 }
