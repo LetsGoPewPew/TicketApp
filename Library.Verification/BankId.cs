@@ -10,7 +10,6 @@ namespace Library.Verification
     {
         public bool Verify()
         {
-            Console.WriteLine("BankID");
             return true;
         }
 

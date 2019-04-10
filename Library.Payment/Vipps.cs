@@ -10,7 +10,6 @@ namespace Library.Payment
     {
         public bool PayForItem(string item, int price)
         {
-            Console.WriteLine("Vipps");
             return true;
         }
 
