@@ -24,12 +24,6 @@ namespace TicketApp.Tests
             context.Database.CreateIfNotExists();
         }
 
-        [OneTimeTearDown]
-        public void OneTimeTearDown()
-        {
-            context.Dispose();
-        }
-
         [SetUp]
         public void SetUp()
         {
