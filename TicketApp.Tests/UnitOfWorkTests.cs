@@ -18,6 +18,7 @@ namespace TicketApp.Tests
         private MyDbContext context;
         private UnitOfWork unitOfWork;
         private TransactionScope scope;
+        private Customer customer;
 
         [OneTimeTearDown]
         public void OneTimeTearDown()
@@ -37,6 +38,7 @@ namespace TicketApp.Tests
         public void SetUp()
         {
             scope = new TransactionScope();
+            customer = new Customer("name1", "email1", "password1");
         }
 
         [TearDown]
@@ -48,7 +50,6 @@ namespace TicketApp.Tests
         [Test]
         public void Assert_that_customer_exists_after_adding()
         {
-            Customer customer = new Customer("name1", "email1", "password1");
 
             unitOfWork.CustomerRepository.Add(customer);
 
@@ -57,6 +58,38 @@ namespace TicketApp.Tests
             List<Customer> result = unitOfWork.CustomerRepository.Entities.ToList<Customer>();
 
             Assert.IsNotEmpty(result);
+        }
+
+        [Test]
+        public void Assert_database_empty_after_adding_then_removing()
+        {
+            unitOfWork.CustomerRepository.Add(customer);
+
+            unitOfWork.Commit();
+
+            unitOfWork.CustomerRepository.Remove(customer);
+
+            unitOfWork.Commit();
+
+            List<Customer> result = unitOfWork.CustomerRepository.Entities.ToList<Customer>();
+
+            Assert.IsEmpty(result);
+
+        }
+
+        [Test]
+        public void Assert_database_empty_after_adding_then_rejecting_changes()
+        {
+
+            unitOfWork.CustomerRepository.Add(customer);
+
+            unitOfWork.RejectChanges();
+
+            unitOfWork.Commit();
+
+            List<Customer> result = unitOfWork.CustomerRepository.Entities.ToList<Customer>();
+
+            Assert.IsEmpty(result);
         }
     }
 }
