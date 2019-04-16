@@ -1,6 +1,7 @@
 ﻿using Library.Logic;
 using Library.Model;
 using Library.PersistenceAdapter;
+using Library.Persistency;
 using Library.Verification;
 using System;
 using System.Data;
@@ -45,7 +46,12 @@ namespace TicketApp
             {
                 if(currentUser.GetType() == typeof(Customer))
                 {
-                    UserLogic.UpgradeCustomer((Customer)currentUser);
+                    UnitOfWork uow = persistenceAdapter.GetUnitOfWork();
+                    persistenceAdapter.Remove(uow.CustomerRepository, (Customer)currentUser);
+                    Organizer upgradedCustomer = UserLogic.UpgradeCustomer((Customer)currentUser);
+                    persistenceAdapter.Add(uow.OrganizerRepository, upgradedCustomer);
+                    uow.Commit();
+
                     MessageBox.Show("Verification Success!");
 
                     LoginForm loginForm = new LoginForm(persistenceAdapter)

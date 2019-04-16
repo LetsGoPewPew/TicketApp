@@ -2,6 +2,7 @@
 using Library.Payment;
 using Library.PersistenceAdapter;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
@@ -37,11 +38,14 @@ namespace TicketApp
             int price = numberOfTickets * socialEvent.PricePerTicket;
             if (paymentMethod.PayForItem(socialEvent.Name, price))
             {
+                List<Ticket> tickets = new List<Ticket>();
                 for(int i = 0; i < numberOfTickets; i++)
                 {
-                    new Ticket(socialEvent);
+                    tickets.Add(new Ticket(socialEvent));
                 }
 
+                persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().TicketRepository, tickets);
+                persistenceAdapter.GetUnitOfWork().Commit();
                 UpdateAvailableTicketsTextBox();
                 MessageBox.Show("Successfully bought tickets", paymentMethod.ToString());
             }

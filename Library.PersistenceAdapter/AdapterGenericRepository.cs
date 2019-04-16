@@ -18,10 +18,28 @@ namespace Library.PersistenceAdapter
             repository.Add(entity);
         }
 
+        public void Add<T>(IRepository<T> repository, List<T> entities) where T : class
+        {
+            foreach(T entity in entities)
+            {
+                Add(repository, entity);
+            }
+        }
+
         public void Remove<T>(IRepository<T> repository, T entity) where T : class
         {
             repository.Remove(entity);
         }
+
+        public void Remove<T>(IRepository<T> repository, List<T> entities) where T : class
+        {
+            foreach(T entity in entities)
+            {
+                repository.Remove(entity);
+            }
+        }
+
+
         public IEnumerable<T> GetAll<T>(IRepository<T> repository) where T : class
         {
             return repository.Entities.AsEnumerable();
