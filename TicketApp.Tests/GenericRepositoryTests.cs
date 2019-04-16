@@ -12,7 +12,7 @@ namespace TicketApp.Tests
     class GenericRepositoryTests
     {
         private MyDbContext context;
-        private GenericRepository<Customer> customers;
+        private DatabaseGenericRepository<Customer> customers;
         private TransactionScope scope;
         private Customer customer;
 
@@ -20,7 +20,7 @@ namespace TicketApp.Tests
         public void OneTimeSetup()
         {
             context = DatabaseContextCreator.CreateTestDatabaseContext();
-            customers = new GenericRepository<Customer>(context);
+            customers = new DatabaseGenericRepository<Customer>(context);
             context.Database.CreateIfNotExists();
         }
 

@@ -19,14 +19,14 @@ namespace TicketApp.Tests
         private TransactionScope scope;
         private AdapterGenericRepository adapter;
         private Customer customer;
-        private UnitOfWork unitOfWork;
+        private DatabaseUnitOfWork unitOfWork;
 
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
             context = DatabaseContextCreator.CreateTestDatabaseContext();
             context.Database.CreateIfNotExists();
-            unitOfWork = new UnitOfWork(context);
+            unitOfWork = new DatabaseUnitOfWork(context);
         }
 
         [SetUp]

@@ -22,11 +22,11 @@ namespace TicketApp
             Application.SetCompatibleTextRenderingDefault(false);
 
             MyDbContext context = DatabaseContextCreator.CreateDatabaseContext();
-            UnitOfWork unitOfWork = new UnitOfWork(context);
+            DatabaseUnitOfWork unitOfWork = new DatabaseUnitOfWork(context);
 
             ITargetPersistenceAdapter persistenceAdapter = new AdapterGenericRepository(unitOfWork);
 
-            UnitOfWork adapterUnitOfWork = persistenceAdapter.GetUnitOfWork();
+            DatabaseUnitOfWork adapterUnitOfWork = persistenceAdapter.GetUnitOfWork();
 
             Application.Run(new LoginForm(persistenceAdapter));
         }

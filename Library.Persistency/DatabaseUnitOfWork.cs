@@ -5,20 +5,20 @@ using System.Linq;
 
 namespace Library.Persistency
 {
-    public class UnitOfWork : IUnitOfWork
+    public class DatabaseUnitOfWork : IUnitOfWork
     {
         private readonly MyDbContext _dbContext;
 
         public IRepository<Customer> CustomerRepository =>
-            new GenericRepository<Customer>(_dbContext);
+            new DatabaseGenericRepository<Customer>(_dbContext);
         public IRepository<Organizer> OrganizerRepository =>
-            new GenericRepository<Organizer>(_dbContext);
+            new DatabaseGenericRepository<Organizer>(_dbContext);
         public IRepository<SocialEvent> SocialEventRepository =>
-            new GenericRepository<SocialEvent>(_dbContext);
+            new DatabaseGenericRepository<SocialEvent>(_dbContext);
         public IRepository<Ticket> TicketRepository =>
-            new GenericRepository<Ticket>(_dbContext);
+            new DatabaseGenericRepository<Ticket>(_dbContext);
 
-        public UnitOfWork(MyDbContext dbContext)
+        public DatabaseUnitOfWork(MyDbContext dbContext)
         {
             _dbContext = dbContext;
         }

@@ -4,14 +4,14 @@ using System.Linq;
 
 namespace Library.Persistency
 {
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class DatabaseGenericRepository<T> : IRepository<T> where T : class
     {
         private readonly MyDbContext _dbContext;
 
         private IDbSet<T> _dbSet => _dbContext.Set<T>();
         public IQueryable<T> Entities => _dbSet;
 
-        public GenericRepository(MyDbContext dbContext)
+        public DatabaseGenericRepository(MyDbContext dbContext)
         {
             _dbContext = dbContext;
         }

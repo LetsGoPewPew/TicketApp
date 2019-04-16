@@ -11,7 +11,7 @@ namespace Library.PersistenceAdapter
         void Remove<T>(IRepository<T> repository, List<T> entity) where T : class;
         IEnumerable<T> GetAll<T>(IRepository<T> repository) where T : class;
 
-        UnitOfWork GetUnitOfWork();
+        DatabaseUnitOfWork GetUnitOfWork();
         void Dispose();
         void Undo();
         void Save();

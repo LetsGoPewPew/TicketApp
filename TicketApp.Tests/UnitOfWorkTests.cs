@@ -16,7 +16,7 @@ namespace TicketApp.Tests
     {
 
         private MyDbContext context;
-        private UnitOfWork unitOfWork;
+        private DatabaseUnitOfWork unitOfWork;
         private TransactionScope scope;
         private Customer customer;
 
@@ -30,7 +30,7 @@ namespace TicketApp.Tests
         public void OneTimeSetup()
         {
             context = DatabaseContextCreator.CreateTestDatabaseContext();
-            unitOfWork = new UnitOfWork(context);
+            unitOfWork = new DatabaseUnitOfWork(context);
             context.Database.CreateIfNotExists();
         }
 

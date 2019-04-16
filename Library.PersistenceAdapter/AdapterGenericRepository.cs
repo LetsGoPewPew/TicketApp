@@ -6,9 +6,9 @@ namespace Library.PersistenceAdapter
 {
     public class AdapterGenericRepository : ITargetPersistenceAdapter
     {
-        public UnitOfWork UnitOfWorkRepository { get; set; }
+        public DatabaseUnitOfWork UnitOfWorkRepository { get; set; }
 
-        public AdapterGenericRepository(UnitOfWork unitOfWorkRepository) 
+        public AdapterGenericRepository(DatabaseUnitOfWork unitOfWorkRepository) 
         {
             UnitOfWorkRepository = unitOfWorkRepository;
         }
@@ -45,7 +45,7 @@ namespace Library.PersistenceAdapter
             return repository.Entities.AsEnumerable();
         }
 
-        public UnitOfWork GetUnitOfWork()
+        public DatabaseUnitOfWork GetUnitOfWork()
         {
             return UnitOfWorkRepository;
         }
