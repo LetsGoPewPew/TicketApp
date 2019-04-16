@@ -77,6 +77,17 @@ namespace TicketApp
 
             this.Close();
         }
+
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            SocialEventListForm socialEventListForm = new SocialEventListForm(persistenceAdapter, currentUser)
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+            this.Close();
+            socialEventListForm.Show();
+        }
     }
 
 }

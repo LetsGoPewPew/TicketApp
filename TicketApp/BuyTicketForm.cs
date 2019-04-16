@@ -47,7 +47,9 @@ namespace TicketApp
                 persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().TicketRepository, tickets);
                 persistenceAdapter.GetUnitOfWork().Commit();
                 UpdateAvailableTicketsTextBox();
-                MessageBox.Show("Successfully bought tickets", paymentMethod.ToString());
+
+                Receipt receipt = new Receipt(numberOfTickets, tickets[0], "nok", paymentMethod.ToString());
+                MessageBox.Show(receipt.GenerateReceipt(), "Your purchase was successful");
             }
             else
                 MessageBox.Show("Failed to buy tickets", paymentMethod.ToString());
