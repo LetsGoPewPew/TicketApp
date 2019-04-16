@@ -26,7 +26,7 @@ namespace TicketApp
 
             ITargetPersistenceAdapter persistenceAdapter = new AdapterGenericRepository(unitOfWork);
 
-            DatabaseUnitOfWork adapterUnitOfWork = persistenceAdapter.GetUnitOfWork();
+            IUnitOfWork adapterUnitOfWork = persistenceAdapter.GetUnitOfWork();
 
             Application.Run(new LoginForm(persistenceAdapter));
         }

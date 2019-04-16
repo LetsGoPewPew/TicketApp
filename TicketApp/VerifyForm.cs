@@ -46,7 +46,7 @@ namespace TicketApp
             {
                 if(currentUser.GetType() == typeof(Customer))
                 {
-                    DatabaseUnitOfWork uow = persistenceAdapter.GetUnitOfWork();
+                    IUnitOfWork uow = persistenceAdapter.GetUnitOfWork();
                     persistenceAdapter.Remove(uow.CustomerRepository, (Customer)currentUser);
                     Organizer upgradedCustomer = UserLogic.UpgradeCustomer((Customer)currentUser);
                     persistenceAdapter.Add(uow.OrganizerRepository, upgradedCustomer);
