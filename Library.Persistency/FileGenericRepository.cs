@@ -8,16 +8,20 @@ namespace Library.Persistency
 {
     public class FileGenericRepository<T> : IRepository<T> where T : class
     {
-        public IQueryable<T> Entities => throw new NotImplementedException();
+        public IQueryable<T> Entities { get; set; }
 
         public void Add(T entity)
         {
-            throw new NotImplementedException();
+            List<T> entities = Entities.ToList();
+            entities.Add(entity);
+            Entities = entities.AsQueryable();
         }
 
         public void Remove(T entity)
         {
-            throw new NotImplementedException();
+            List<T> entities = Entities.ToList();
+            entities.Remove(entity);
+            Entities = entities.AsQueryable();
         }
     }
 }
