@@ -1,25 +1,15 @@
 ﻿using Library.Logic;
 using Library.Model;
-using Library.PersistenceAdapter;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TicketApp
 {
     public partial class RegisterForm : Form
     {
-        private ITargetPersistenceAdapter persistenceAdapter;
-        public RegisterForm(ITargetPersistenceAdapter persistenceAdapter)
+        public RegisterForm()
         {
             InitializeComponent();
-            this.persistenceAdapter = persistenceAdapter;
         }
 
         private void ButtonRegister_Click(object sender, EventArgs e)
@@ -38,12 +28,12 @@ namespace TicketApp
                 else
                 {
                     Customer newCustomer = new Customer(TextName.Text, TextEmail.Text, TextPassword.Text);
-                    persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().CustomerRepository, newCustomer);
-                    persistenceAdapter.GetUnitOfWork().Commit();
+                    //persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().CustomerRepository, newCustomer);
+                    //persistenceAdapter.GetUnitOfWork().Commit();
 
                     MessageBox.Show($"Welcome to Ticketapp {newCustomer.Name}");
 
-                    LoginForm loginForm = new LoginForm(persistenceAdapter)
+                    LoginForm loginForm = new LoginForm()
                     {
                         StartPosition = FormStartPosition.Manual,
                         Location = this.Location

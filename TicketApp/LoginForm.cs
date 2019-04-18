@@ -9,13 +9,8 @@ namespace TicketApp
 {
     public partial class LoginForm : Form
     {
-        ITargetPersistenceAdapter persistenceAdapter;
-        public LoginForm(ITargetPersistenceAdapter persistenceAdapter)
+        public LoginForm()
         {
-            this.persistenceAdapter = persistenceAdapter;
-            Customer.CustomerList = this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().CustomerRepository).ToList();
-            Organizer.OrganizerList = this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().OrganizerRepository).ToList();
-
             InitializeComponent();
         }
 
@@ -46,7 +41,7 @@ namespace TicketApp
 
         private void ButtonRegister_Click(object sender, EventArgs e)
         {
-            RegisterForm registerForm = new RegisterForm(persistenceAdapter)
+            RegisterForm registerForm = new RegisterForm()
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -57,7 +52,7 @@ namespace TicketApp
 
         private void GoTosocialEventListForm(User currentUser)
         {
-            SocialEventListForm socialEventListForm = new SocialEventListForm(persistenceAdapter, currentUser)
+            SocialEventListForm socialEventListForm = new SocialEventListForm(currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
