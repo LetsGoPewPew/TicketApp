@@ -21,8 +21,9 @@ namespace TicketApp
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            MyDbContext context = DatabaseContextCreator.CreateDatabaseContext();
-            DatabaseUnitOfWork unitOfWork = new DatabaseUnitOfWork(context);
+            //MyDbContext context = DatabaseContextCreator.CreateDatabaseContext();
+            //DatabaseUnitOfWork unitOfWork = new DatabaseUnitOfWork(context);
+            ListUnitOfWork unitOfWork = new ListUnitOfWork();
 
             ITargetPersistenceAdapter persistenceAdapter = new AdapterGenericRepository(unitOfWork);
 

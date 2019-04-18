@@ -57,6 +57,8 @@
     <Compile Include="DatabaseGenericRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="ListGenericRepository.cs" />
+    <Compile Include="ListUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DatabaseUnitOfWork.cs" />
   </ItemGroup>
