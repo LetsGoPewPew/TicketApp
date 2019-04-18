@@ -1,8 +1,6 @@
 ﻿using Library.Logic;
 using Library.Model;
-using Library.PersistenceAdapter;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace TicketApp

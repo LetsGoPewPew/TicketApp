@@ -13,12 +13,9 @@ namespace TicketApp
     public partial class BuyTicketForm : Form
     {
         private SocialEvent socialEvent;
-        private ITargetPersistenceAdapter persistenceAdapter;
-        public BuyTicketForm(ITargetPersistenceAdapter persistenceAdapter, SocialEvent socialEvent)
+        public BuyTicketForm(SocialEvent socialEvent)
         {
             InitializeComponent();
-            this.persistenceAdapter = persistenceAdapter;
-            this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().TicketRepository).ToList();
             this.socialEvent = socialEvent;
 
             InitializeInfo();
@@ -44,8 +41,6 @@ namespace TicketApp
                     tickets.Add(new Ticket(socialEvent));
                 }
 
-                persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().TicketRepository, tickets);
-                persistenceAdapter.GetUnitOfWork().Commit();
                 UpdateAvailableTicketsTextBox();
 
                 Receipt receipt = new Receipt(numberOfTickets, tickets[0], "nok", paymentMethod.ToString());

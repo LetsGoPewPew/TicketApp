@@ -7,11 +7,9 @@ namespace TicketApp
 {
     public partial class CreateSocialEventForm : Form
     {
-        private ITargetPersistenceAdapter persistenceAdapter;
         private User currentUser = null;
-        public CreateSocialEventForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
+        public CreateSocialEventForm(User currentUser)
         {
-            this.persistenceAdapter = persistenceAdapter;
             this.currentUser = currentUser;
 
             InitializeComponent();
@@ -23,8 +21,6 @@ namespace TicketApp
             {
                 SocialEvent newSocialEvent = new SocialEvent((int)NumericUpDownTotalTickets.Value,
                                                             (int)NumericUpDownTicketPrice.Value, (Organizer)currentUser, TextBoxCategory.Text, TextBoxSocialEventName.Text);
-                persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().SocialEventRepository, newSocialEvent);
-                persistenceAdapter.GetUnitOfWork().Commit();
                 MessageBox.Show($"SocialEvent: {TextBoxSocialEventName.Text} created");
             }
             else

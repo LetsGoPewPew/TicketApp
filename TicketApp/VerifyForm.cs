@@ -13,11 +13,9 @@ namespace TicketApp
 {
     public partial class VerifyForm : Form
     {
-        private ITargetPersistenceAdapter persistenceAdapter;
         private User currentUser = null;
-        public VerifyForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
+        public VerifyForm(User currentUser)
         {
-            this.persistenceAdapter = persistenceAdapter;
             this.currentUser = currentUser;
 
             InitializeComponent();
@@ -46,15 +44,11 @@ namespace TicketApp
             {
                 if(currentUser.GetType() == typeof(Customer))
                 {
-                    IUnitOfWork uow = persistenceAdapter.GetUnitOfWork();
-                    persistenceAdapter.Remove(uow.CustomerRepository, (Customer)currentUser);
                     Organizer upgradedCustomer = UserLogic.UpgradeCustomer((Customer)currentUser);
-                    persistenceAdapter.Add(uow.OrganizerRepository, upgradedCustomer);
-                    uow.Commit();
 
                     MessageBox.Show("Verification Success!");
 
-                    LoginForm loginForm = new LoginForm(persistenceAdapter)
+                    LoginForm loginForm = new LoginForm()
                     {
                         StartPosition = FormStartPosition.Manual,
                         Location = this.Location
@@ -66,7 +60,7 @@ namespace TicketApp
             else
             {
                 MessageBox.Show("Verification Failed.");
-                SocialEventListForm socialEventListForm = new SocialEventListForm(persistenceAdapter, currentUser)
+                SocialEventListForm socialEventListForm = new SocialEventListForm(currentUser)
                 {
                     StartPosition = FormStartPosition.Manual,
                     Location = this.Location
@@ -80,7 +74,7 @@ namespace TicketApp
 
         private void ButtonBack_Click(object sender, EventArgs e)
         {
-            SocialEventListForm socialEventListForm = new SocialEventListForm(persistenceAdapter, currentUser)
+            SocialEventListForm socialEventListForm = new SocialEventListForm(currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location

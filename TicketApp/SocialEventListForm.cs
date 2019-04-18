@@ -8,12 +8,9 @@ namespace TicketApp
 {
     public partial class SocialEventListForm : Form
     {
-        private ITargetPersistenceAdapter persistenceAdapter;
         private User currentUser = null;
-        public SocialEventListForm(ITargetPersistenceAdapter persistenceAdapter, User currentUser)
+        public SocialEventListForm(User currentUser)
         {
-            this.persistenceAdapter = persistenceAdapter;
-            SocialEvent.SocialEventList = this.persistenceAdapter.GetAll(this.persistenceAdapter.GetUnitOfWork().SocialEventRepository).ToList();
             this.currentUser = currentUser;
 
             InitializeComponent();
@@ -43,7 +40,7 @@ namespace TicketApp
 
         private void ButtonBuyTicket_Click(object sender, EventArgs e)
         {
-            BuyTicketForm buyTicket = new BuyTicketForm(persistenceAdapter, (SocialEvent)listBoxSocialEvents.SelectedItem)
+            BuyTicketForm buyTicket = new BuyTicketForm((SocialEvent)listBoxSocialEvents.SelectedItem)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -53,7 +50,7 @@ namespace TicketApp
 
         private void ButtonLogout_Click(object sender, EventArgs e)
         {
-            LoginForm loginForm = new LoginForm(persistenceAdapter)
+            LoginForm loginForm = new LoginForm()
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -64,7 +61,7 @@ namespace TicketApp
 
         private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
         {
-            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(persistenceAdapter, currentUser)
+            CreateSocialEventForm createSocialEventForm = new CreateSocialEventForm(currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
@@ -74,7 +71,7 @@ namespace TicketApp
 
         private void ButtonVerify_Click(object sender, EventArgs e)
         {
-            VerifyForm verifyForm = new VerifyForm(persistenceAdapter, currentUser)
+            VerifyForm verifyForm = new VerifyForm(currentUser)
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
