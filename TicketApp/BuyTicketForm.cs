@@ -62,10 +62,11 @@ namespace TicketApp
 
         private void InitializeInfo()
         {
-            textBoxSocialEventDescription.Text = socialEvent.ToString();
+            LabelSocialEventDescription.Text = socialEvent.Name;
+            TextBoxOrganizer.Text = socialEvent.Organizer.Name;
             UpdateAvailableTicketsTextBox();
             UpdateToPayTextBox();
-            textBoxPricePerTicket.Text = socialEvent.PricePerTicket + "kr";
+            TextBoxPricePerTicket.Text = socialEvent.PricePerTicket + "kr";
 
             var paymentMethods = Assembly.GetAssembly(typeof(IPaymentMethod)).GetTypes()
                 .Where(myType => myType.GetInterfaces().Contains(typeof(IPaymentMethod)));
@@ -80,12 +81,12 @@ namespace TicketApp
 
         private void UpdateAvailableTicketsTextBox()
         {
-            textBoxTicketsAvailable.Text = socialEvent.GetAmountOfAvailableTickets() + "/" + socialEvent.MaxTickets;
+            TextBoxTicketsAvailable.Text = socialEvent.GetAmountOfAvailableTickets() + "/" + socialEvent.MaxTickets;
         }
 
         private void UpdateToPayTextBox()
         {
-            textBoxToPay.Text = (socialEvent.PricePerTicket * NumericUpDownTickets.Value) + "kr";
+            TextBoxToPay.Text = (socialEvent.PricePerTicket * NumericUpDownTickets.Value) + "kr";
         }
 
     }

@@ -28,32 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBoxSocialEventDescription = new System.Windows.Forms.TextBox();
             this.buttonBuy = new System.Windows.Forms.Button();
             this.NumericUpDownTickets = new System.Windows.Forms.NumericUpDown();
-            this.textBoxNumberOfTicketsDescription = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBoxToPay = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBoxPricePerTicket = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBoxTicketsAvailable = new System.Windows.Forms.TextBox();
+            this.TextBoxToPay = new System.Windows.Forms.TextBox();
+            this.TextBoxPricePerTicket = new System.Windows.Forms.TextBox();
+            this.TextBoxTicketsAvailable = new System.Windows.Forms.TextBox();
             this.ComboPaymentMethod = new System.Windows.Forms.ComboBox();
+            this.TextBoxOrganizer = new System.Windows.Forms.TextBox();
+            this.LabelTicketsAvailable = new System.Windows.Forms.Label();
+            this.LabelPricePerTicket = new System.Windows.Forms.Label();
+            this.LabelOrganizer = new System.Windows.Forms.Label();
+            this.LabelNumberOfTickets = new System.Windows.Forms.Label();
+            this.LabelToPay = new System.Windows.Forms.Label();
+            this.LabelSocialEventDescription = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownTickets)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBoxSocialEventDescription
-            // 
-            this.textBoxSocialEventDescription.Location = new System.Drawing.Point(12, 12);
-            this.textBoxSocialEventDescription.Name = "textBoxSocialEventDescription";
-            this.textBoxSocialEventDescription.ReadOnly = true;
-            this.textBoxSocialEventDescription.Size = new System.Drawing.Size(776, 20);
-            this.textBoxSocialEventDescription.TabIndex = 0;
-            this.textBoxSocialEventDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // buttonBuy
             // 
-            this.buttonBuy.Location = new System.Drawing.Point(53, 351);
+            this.buttonBuy.Location = new System.Drawing.Point(54, 351);
             this.buttonBuy.Name = "buttonBuy";
             this.buttonBuy.Size = new System.Drawing.Size(75, 23);
             this.buttonBuy.TabIndex = 1;
@@ -63,7 +56,7 @@
             // 
             // NumericUpDownTickets
             // 
-            this.NumericUpDownTickets.Location = new System.Drawing.Point(134, 261);
+            this.NumericUpDownTickets.Location = new System.Drawing.Point(134, 259);
             this.NumericUpDownTickets.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -84,100 +77,127 @@
             0});
             this.NumericUpDownTickets.ValueChanged += new System.EventHandler(this.NumericUpDownTickets_ValueChanged);
             // 
-            // textBoxNumberOfTicketsDescription
+            // TextBoxToPay
             // 
-            this.textBoxNumberOfTicketsDescription.Location = new System.Drawing.Point(12, 260);
-            this.textBoxNumberOfTicketsDescription.Name = "textBoxNumberOfTicketsDescription";
-            this.textBoxNumberOfTicketsDescription.ReadOnly = true;
-            this.textBoxNumberOfTicketsDescription.Size = new System.Drawing.Size(116, 20);
-            this.textBoxNumberOfTicketsDescription.TabIndex = 3;
-            this.textBoxNumberOfTicketsDescription.Text = "Number of tickets:";
-            this.textBoxNumberOfTicketsDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxToPay.Location = new System.Drawing.Point(105, 298);
+            this.TextBoxToPay.Name = "TextBoxToPay";
+            this.TextBoxToPay.ReadOnly = true;
+            this.TextBoxToPay.Size = new System.Drawing.Size(75, 20);
+            this.TextBoxToPay.TabIndex = 16;
+            this.TextBoxToPay.Text = "0kr";
+            this.TextBoxToPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox6
+            // TextBoxPricePerTicket
             // 
-            this.textBox6.Location = new System.Drawing.Point(12, 298);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(75, 20);
-            this.textBox6.TabIndex = 15;
-            this.textBox6.Text = "To pay:";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxPricePerTicket.Location = new System.Drawing.Point(105, 127);
+            this.TextBoxPricePerTicket.Name = "TextBoxPricePerTicket";
+            this.TextBoxPricePerTicket.ReadOnly = true;
+            this.TextBoxPricePerTicket.Size = new System.Drawing.Size(75, 20);
+            this.TextBoxPricePerTicket.TabIndex = 18;
+            this.TextBoxPricePerTicket.Text = "0kr";
+            this.TextBoxPricePerTicket.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBoxToPay
+            // TextBoxTicketsAvailable
             // 
-            this.textBoxToPay.Location = new System.Drawing.Point(93, 298);
-            this.textBoxToPay.Name = "textBoxToPay";
-            this.textBoxToPay.ReadOnly = true;
-            this.textBoxToPay.Size = new System.Drawing.Size(82, 20);
-            this.textBoxToPay.TabIndex = 16;
-            this.textBoxToPay.Text = "0kr";
-            this.textBoxToPay.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(12, 76);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(87, 20);
-            this.textBox8.TabIndex = 17;
-            this.textBox8.Text = "Price per ticket:";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxPricePerTicket
-            // 
-            this.textBoxPricePerTicket.Location = new System.Drawing.Point(105, 76);
-            this.textBoxPricePerTicket.Name = "textBoxPricePerTicket";
-            this.textBoxPricePerTicket.ReadOnly = true;
-            this.textBoxPricePerTicket.Size = new System.Drawing.Size(70, 20);
-            this.textBoxPricePerTicket.TabIndex = 18;
-            this.textBoxPricePerTicket.Text = "0kr";
-            this.textBoxPricePerTicket.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(12, 50);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(94, 20);
-            this.textBox9.TabIndex = 19;
-            this.textBox9.Text = "Tickets available:";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // textBoxTicketsAvailable
-            // 
-            this.textBoxTicketsAvailable.Location = new System.Drawing.Point(112, 50);
-            this.textBoxTicketsAvailable.Name = "textBoxTicketsAvailable";
-            this.textBoxTicketsAvailable.ReadOnly = true;
-            this.textBoxTicketsAvailable.Size = new System.Drawing.Size(63, 20);
-            this.textBoxTicketsAvailable.TabIndex = 20;
-            this.textBoxTicketsAvailable.Text = "0/0";
-            this.textBoxTicketsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TextBoxTicketsAvailable.Location = new System.Drawing.Point(105, 104);
+            this.TextBoxTicketsAvailable.Name = "TextBoxTicketsAvailable";
+            this.TextBoxTicketsAvailable.ReadOnly = true;
+            this.TextBoxTicketsAvailable.Size = new System.Drawing.Size(75, 20);
+            this.TextBoxTicketsAvailable.TabIndex = 20;
+            this.TextBoxTicketsAvailable.Text = "0/0";
+            this.TextBoxTicketsAvailable.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ComboPaymentMethod
             // 
             this.ComboPaymentMethod.FormattingEnabled = true;
-            this.ComboPaymentMethod.Location = new System.Drawing.Point(7, 324);
+            this.ComboPaymentMethod.Location = new System.Drawing.Point(12, 324);
             this.ComboPaymentMethod.Name = "ComboPaymentMethod";
             this.ComboPaymentMethod.Size = new System.Drawing.Size(168, 21);
             this.ComboPaymentMethod.TabIndex = 21;
+            // 
+            // TextBoxOrganizer
+            // 
+            this.TextBoxOrganizer.Location = new System.Drawing.Point(105, 60);
+            this.TextBoxOrganizer.Name = "TextBoxOrganizer";
+            this.TextBoxOrganizer.ReadOnly = true;
+            this.TextBoxOrganizer.Size = new System.Drawing.Size(75, 20);
+            this.TextBoxOrganizer.TabIndex = 23;
+            this.TextBoxOrganizer.Text = "Organizer name";
+            this.TextBoxOrganizer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LabelTicketsAvailable
+            // 
+            this.LabelTicketsAvailable.AutoSize = true;
+            this.LabelTicketsAvailable.Location = new System.Drawing.Point(9, 107);
+            this.LabelTicketsAvailable.Name = "LabelTicketsAvailable";
+            this.LabelTicketsAvailable.Size = new System.Drawing.Size(90, 13);
+            this.LabelTicketsAvailable.TabIndex = 24;
+            this.LabelTicketsAvailable.Text = "Tickets available:";
+            // 
+            // LabelPricePerTicket
+            // 
+            this.LabelPricePerTicket.AutoSize = true;
+            this.LabelPricePerTicket.Location = new System.Drawing.Point(9, 130);
+            this.LabelPricePerTicket.Name = "LabelPricePerTicket";
+            this.LabelPricePerTicket.Size = new System.Drawing.Size(81, 13);
+            this.LabelPricePerTicket.TabIndex = 25;
+            this.LabelPricePerTicket.Text = "Price per ticket:";
+            // 
+            // LabelOrganizer
+            // 
+            this.LabelOrganizer.AutoSize = true;
+            this.LabelOrganizer.Location = new System.Drawing.Point(9, 63);
+            this.LabelOrganizer.Name = "LabelOrganizer";
+            this.LabelOrganizer.Size = new System.Drawing.Size(55, 13);
+            this.LabelOrganizer.TabIndex = 26;
+            this.LabelOrganizer.Text = "Organizer:";
+            // 
+            // LabelNumberOfTickets
+            // 
+            this.LabelNumberOfTickets.AutoSize = true;
+            this.LabelNumberOfTickets.Location = new System.Drawing.Point(9, 261);
+            this.LabelNumberOfTickets.Name = "LabelNumberOfTickets";
+            this.LabelNumberOfTickets.Size = new System.Drawing.Size(93, 13);
+            this.LabelNumberOfTickets.TabIndex = 27;
+            this.LabelNumberOfTickets.Text = "Number of tickets:";
+            // 
+            // LabelToPay
+            // 
+            this.LabelToPay.AutoSize = true;
+            this.LabelToPay.Location = new System.Drawing.Point(9, 305);
+            this.LabelToPay.Name = "LabelToPay";
+            this.LabelToPay.Size = new System.Drawing.Size(43, 13);
+            this.LabelToPay.TabIndex = 28;
+            this.LabelToPay.Text = "To pay:";
+            // 
+            // LabelSocialEventDescription
+            // 
+            this.LabelSocialEventDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelSocialEventDescription.Location = new System.Drawing.Point(12, 9);
+            this.LabelSocialEventDescription.Name = "LabelSocialEventDescription";
+            this.LabelSocialEventDescription.Size = new System.Drawing.Size(776, 31);
+            this.LabelSocialEventDescription.TabIndex = 29;
+            this.LabelSocialEventDescription.Text = "SocialEventDescription";
+            this.LabelSocialEventDescription.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // BuyTicketForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LabelSocialEventDescription);
+            this.Controls.Add(this.LabelToPay);
+            this.Controls.Add(this.LabelNumberOfTickets);
+            this.Controls.Add(this.LabelOrganizer);
+            this.Controls.Add(this.LabelPricePerTicket);
+            this.Controls.Add(this.LabelTicketsAvailable);
+            this.Controls.Add(this.TextBoxOrganizer);
             this.Controls.Add(this.ComboPaymentMethod);
-            this.Controls.Add(this.textBoxTicketsAvailable);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBoxPricePerTicket);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBoxToPay);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBoxNumberOfTicketsDescription);
+            this.Controls.Add(this.TextBoxTicketsAvailable);
+            this.Controls.Add(this.TextBoxPricePerTicket);
+            this.Controls.Add(this.TextBoxToPay);
             this.Controls.Add(this.NumericUpDownTickets);
             this.Controls.Add(this.buttonBuy);
-            this.Controls.Add(this.textBoxSocialEventDescription);
             this.Name = "BuyTicketForm";
             this.Text = "BuyTicketForm";
             ((System.ComponentModel.ISupportInitialize)(this.NumericUpDownTickets)).EndInit();
@@ -187,17 +207,18 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox textBoxSocialEventDescription;
         private System.Windows.Forms.Button buttonBuy;
         private System.Windows.Forms.NumericUpDown NumericUpDownTickets;
-        private System.Windows.Forms.TextBox textBoxNumberOfTicketsDescription;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBoxToPay;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBoxPricePerTicket;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBoxTicketsAvailable;
+        private System.Windows.Forms.TextBox TextBoxToPay;
+        private System.Windows.Forms.TextBox TextBoxPricePerTicket;
+        private System.Windows.Forms.TextBox TextBoxTicketsAvailable;
         private System.Windows.Forms.ComboBox ComboPaymentMethod;
+        private System.Windows.Forms.TextBox TextBoxOrganizer;
+        private System.Windows.Forms.Label LabelTicketsAvailable;
+        private System.Windows.Forms.Label LabelPricePerTicket;
+        private System.Windows.Forms.Label LabelOrganizer;
+        private System.Windows.Forms.Label LabelNumberOfTickets;
+        private System.Windows.Forms.Label LabelToPay;
+        private System.Windows.Forms.Label LabelSocialEventDescription;
     }
 }
