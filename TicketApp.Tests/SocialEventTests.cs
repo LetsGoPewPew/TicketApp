@@ -14,12 +14,14 @@ namespace TicketApp.Tests
     {
         private SocialEvent socialEvent;
         private int numberOfTickets;
+        private Organizer organizer;
 
         [SetUp]
         public void SetUp()
         {
+            organizer = new Organizer();
             numberOfTickets = 10;
-            socialEvent = new SocialEvent(numberOfTickets, 1);
+            socialEvent = new SocialEvent(numberOfTickets, 1 , organizer);
         }
 
         [Test]

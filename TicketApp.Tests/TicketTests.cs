@@ -17,12 +17,14 @@ namespace TicketApp.Tests
         private Ticket ticket2;
         private SocialEvent socialEvent1;
         private SocialEvent socialEvent2;
+        private Organizer organizer;
 
         [SetUp]
         public void SetUp()
         {
-            socialEvent1 = new SocialEvent(10, 100);
-            socialEvent2 = new SocialEvent(10, 100);
+            organizer = new Organizer();
+            socialEvent1 = new SocialEvent(10, 100, organizer);
+            socialEvent2 = new SocialEvent(10, 100, organizer);
             ticket1 = new Ticket(socialEvent1);
             ticket2 = new Ticket(socialEvent2);
         }
