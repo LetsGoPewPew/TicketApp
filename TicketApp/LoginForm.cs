@@ -44,8 +44,7 @@ namespace TicketApp
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
             };
-            registerForm.Show();
-            this.Hide();
+            registerForm.ShowDialog();
         }
 
         private void GoTosocialEventListForm(User currentUser)
@@ -68,6 +67,15 @@ namespace TicketApp
                 return false;
             }
             return true;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+
+            Application.Exit();
         }
     }
 }

@@ -77,7 +77,7 @@ namespace TicketApp
                 Location = this.Location
             };
             verifyForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void ButtonRefreshSocialEventList_Click(object sender, EventArgs e)
