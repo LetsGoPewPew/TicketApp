@@ -15,10 +15,12 @@ namespace TicketApp.Tests
     [TestFixture]
     class ReceiptTests
     {
+
         [Test]
         public void Assert_receipt_is_correct()
         {
-            SocialEvent socialEvent = new SocialEvent(10, 100, "TestCategory", "TestName");
+            Organizer organizer = new Organizer();
+            SocialEvent socialEvent = new SocialEvent(10, 100, organizer ,"TestCategory", "TestName");
             Ticket ticket = new Ticket(socialEvent);
             Vipps vipps = new Vipps();
             Receipt receipt = new Receipt(4, ticket, "kr", vipps.ToString());

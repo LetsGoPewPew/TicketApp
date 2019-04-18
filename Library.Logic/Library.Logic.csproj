@@ -54,6 +54,10 @@
       <Project>{3520f4d3-f24f-470b-b380-d7f2afc4c7d5}</Project>
       <Name>Library.Payment</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Library.PersistenceAdapter\Library.PersistenceAdapter.csproj">
+      <Project>{9FBD0336-3614-4598-813D-A1534489A67D}</Project>
+      <Name>Library.PersistenceAdapter</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
