@@ -1,7 +1,5 @@
 ﻿using Library.Model;
-using Library.PersistenceAdapter;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace TicketApp
@@ -56,7 +54,7 @@ namespace TicketApp
                 Location = this.Location
             };
             loginForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
@@ -88,10 +86,6 @@ namespace TicketApp
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            base.OnFormClosing(e);
-
-            if (e.CloseReason == CloseReason.WindowsShutDown) return;
-
             Application.Exit();
         }
     }

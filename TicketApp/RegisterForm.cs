@@ -28,8 +28,6 @@ namespace TicketApp
                 else
                 {
                     Customer newCustomer = new Customer(TextName.Text, TextEmail.Text, TextPassword.Text);
-                    //persistenceAdapter.Add(persistenceAdapter.GetUnitOfWork().CustomerRepository, newCustomer);
-                    //persistenceAdapter.GetUnitOfWork().Commit();
 
                     MessageBox.Show($"Welcome to Ticketapp {newCustomer.Name}");
 
