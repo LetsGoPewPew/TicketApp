@@ -1,7 +1,5 @@
 ﻿using Library.Model;
-using Library.PersistenceAdapter;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace TicketApp
@@ -56,7 +54,7 @@ namespace TicketApp
                 Location = this.Location
             };
             loginForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void ButtonCreateSocialEvent_Click(object sender, EventArgs e)
@@ -77,7 +75,7 @@ namespace TicketApp
                 Location = this.Location
             };
             verifyForm.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void ButtonRefreshSocialEventList_Click(object sender, EventArgs e)
