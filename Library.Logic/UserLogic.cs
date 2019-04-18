@@ -1,4 +1,5 @@
 ﻿using Library.Model;
+using Library.PersistenceAdapter;
 
 namespace Library.Logic
 {
@@ -16,9 +17,9 @@ namespace Library.Logic
 
         public static bool EmailInUse(string email)
         {
-            foreach (Customer customer in Customer.CustomerList)
+            foreach (User user in User.UserList)
             {
-                if (customer.Email == email)
+                if (user.Email == email)
                     return true;
             }
             return false;
