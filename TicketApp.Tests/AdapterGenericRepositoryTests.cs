@@ -3,11 +3,8 @@ using Library.Model;
 using Library.PersistenceAdapter;
 using Library.Persistency;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Transactions;
 
 namespace TicketApp.Tests

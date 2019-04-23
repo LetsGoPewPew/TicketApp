@@ -1,7 +1,4 @@
-﻿using Library.DataAccess;
-using Library.Model;
-using Library.PersistenceAdapter;
-using Library.Persistency;
+﻿using Library.Model;
 using System;
 using System.Windows.Forms;
 

@@ -1,7 +1,5 @@
 ﻿using Library.Logic;
 using Library.Model;
-using Library.PersistenceAdapter;
-using Library.Persistency;
 using Library.Verification;
 using System;
 using System.Data;

@@ -1,13 +1,8 @@
-﻿using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library.Model;
-using ApprovalTests;
+﻿using ApprovalTests;
 using ApprovalTests.Reporters;
+using Library.Model;
 using Library.Payment;
+using NUnit.Framework;
 
 namespace TicketApp.Tests
 {
