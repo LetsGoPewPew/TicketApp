@@ -53,7 +53,6 @@ namespace TicketApp
                         StartPosition = FormStartPosition.Manual,
                         Location = this.Location
                     };
-                    this.Close();
                     loginForm.Show();
                 }
             }
