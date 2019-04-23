@@ -83,5 +83,9 @@ namespace TicketApp
             TextBoxToPay.Text = (socialEvent.PricePerTicket * NumericUpDownTickets.Value) + "kr";
         }
 
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
