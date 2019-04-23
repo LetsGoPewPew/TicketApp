@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Library.Payment
+﻿namespace Library.Payment
 {
     public class CreditCard : PaymentMethod, IPaymentMethod
     {

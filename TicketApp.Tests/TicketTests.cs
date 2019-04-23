@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Library.Model;
 using NUnit.Framework;
-using TicketApp.Tests;
-using Library.Model;
-using NUnit.Framework.Internal.Execution;
 
 namespace TicketApp.Tests
 {

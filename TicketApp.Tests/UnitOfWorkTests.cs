@@ -1,12 +1,9 @@
-﻿using NUnit.Framework;
-using System;
+﻿using Library.DataAccess;
+using Library.Model;
+using Library.Persistency;
+using NUnit.Framework;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Library.Model;
-using Library.DataAccess;
-using Library.Persistency;
 using System.Transactions;
 
 namespace TicketApp.Tests

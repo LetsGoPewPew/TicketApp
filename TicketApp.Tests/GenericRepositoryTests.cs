@@ -1,10 +1,10 @@
-﻿using Library.Persistency;
+﻿using Library.DataAccess;
 using Library.Model;
+using Library.Persistency;
 using NUnit.Framework;
-using Library.DataAccess;
+using System.Collections.Generic;
 using System.Linq;
 using System.Transactions;
-using System.Collections.Generic;
 
 namespace TicketApp.Tests
 {
