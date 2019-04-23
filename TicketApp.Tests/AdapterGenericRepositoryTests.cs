@@ -42,7 +42,7 @@ namespace TicketApp.Tests
 
         [Test]
         public void Assert_that_customer_exists_after_adding()
-        {
+        {   
             adapter.Add(adapter.GetUnitOfWork().CustomerRepository, customer);
 
             adapter.Save();

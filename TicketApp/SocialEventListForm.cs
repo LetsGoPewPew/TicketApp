@@ -64,7 +64,7 @@ namespace TicketApp
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
             };
-            createSocialEventForm.Show();
+            createSocialEventForm.ShowDialog();
         }
 
         private void ButtonVerify_Click(object sender, EventArgs e)
