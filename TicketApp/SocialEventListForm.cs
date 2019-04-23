@@ -43,7 +43,7 @@ namespace TicketApp
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
             };
-            buyTicket.Show();
+            buyTicket.ShowDialog();
         }
 
         private void ButtonLogout_Click(object sender, EventArgs e)
