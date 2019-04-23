@@ -51,7 +51,6 @@ namespace TicketApp
                         StartPosition = FormStartPosition.Manual,
                         Location = this.Location
                     };
-                    this.Close();
                     loginForm.Show();
                 }
             }
@@ -63,10 +62,8 @@ namespace TicketApp
                     StartPosition = FormStartPosition.Manual,
                     Location = this.Location
                 };
-                this.Close();
                 socialEventListForm.Show();
             }
-
             this.Close();
         }
 
